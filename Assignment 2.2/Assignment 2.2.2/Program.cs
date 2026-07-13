@@ -34,23 +34,23 @@ static void CalculatorFunction()
         switch (choice)
         {
             case 1:
-                int value1 = Maths.Add((int)num1, (int)num2);
+                int value1 = MathsOperations.Add((int)num1, (int)num2);
                 Console.WriteLine($"The result of addition is: {value1}");
                 break;
             case 2:
                 Console.WriteLine("Please enter the third number:");
                 double num3 = Convert.ToDouble(Console.ReadLine());
-                decimal value2 = Maths.Add((decimal)num1, (decimal)num2, (decimal)num3);
+                decimal value2 = MathsOperations.Add((decimal)num1, (decimal)num2, (decimal)num3);
                 Console.WriteLine($"The result of addition is: {value2}");
                 break;
             case 3:
-                float value3 = Maths.Multiply((float)num1, (float)num2);
+                float value3 = MathsOperations.Multiply((float)num1, (float)num2);
                 Console.WriteLine($"The result of multiplication is: {value3}");
                 break;
             case 4:
                 Console.WriteLine("Please enter the third number:");
                 double num3b = Convert.ToDouble(Console.ReadLine());
-                float value4 = Maths.Multiply((float)num1, (float)num2, (float)num3b);
+                float value4 = MathsOperations.Multiply((float)num1, (float)num2, (float)num3b);
                 Console.WriteLine($"The result of multiplication is: {value4}");
                 break;
             default:

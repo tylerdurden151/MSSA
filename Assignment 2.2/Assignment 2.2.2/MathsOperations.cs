@@ -1,4 +1,4 @@
-public static class Maths
+public static class MathsOperations
 {
     public static int Add(int num1, int num2)
     {
