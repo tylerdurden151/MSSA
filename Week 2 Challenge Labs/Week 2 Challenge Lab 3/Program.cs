@@ -61,8 +61,10 @@ class Triangle
     }
     private void DisplayTriangle(int number, int width)
     {
+        //Loop to display the triangle size, but increment downwards to create the triangle shape
         for (int i = width; i > 0; i--)
         {
+            //Loop to display the number of times the number should be printed on each line
             for (int j = 0; j < i; j++)
             {
                 Console.Write(number);
