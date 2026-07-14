@@ -37,7 +37,7 @@ class TipApp
     }
 
 
-    public decimal tipAmount => BillTotal * (TipPercentage / 100);
+    public decimal tipAmount => BillTotal * TipPercentage;
     public decimal total => BillTotal + tipAmount;
 
     public void Run()
