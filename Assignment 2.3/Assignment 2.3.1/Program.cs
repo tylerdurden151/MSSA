@@ -6,12 +6,15 @@ using System;
 using System.IO;
 
 
-        // Create a text file and write basic details to it.
+        // Create a text file and write basic details to it using user input.
         using (StreamWriter sw = new StreamWriter("Assignment2.3.1_text.txt"))
         {
-            sw.WriteLine("Name: John Doe");
-            sw.WriteLine("Age: 30");
-            sw.WriteLine("Address: 123 Main St, Anytown, USA");
+            Console.Write("Name: ");
+            sw.WriteLine("Name: " + Console.ReadLine());
+            Console.Write("Age: ");
+            sw.WriteLine("Age: " + Console.ReadLine());
+            Console.Write("Address: ");
+            sw.WriteLine("Address: " + Console.ReadLine());
         }
 
         try
@@ -26,9 +29,7 @@ using System.IO;
                 }
             }
         } catch (Exception e) {
-            {
-                // Let the user know what went wrong.
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(e.Message);
-            }
+            // Let the user know what went wrong.
+            Console.WriteLine("The file could not be read:");
+            Console.WriteLine(e.Message);
         }       
