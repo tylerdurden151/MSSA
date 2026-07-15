@@ -19,7 +19,6 @@ An enumeration type enum called Allergen is already declared in the Code tab and
 The class should have the following members:*/
 using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.Linq;
 
 
@@ -49,46 +48,35 @@ public class Allergies
 
     // properties
     private string? _name;
-    private string? _description;
     private int _score;
-    private string[] _allergies;
     public string? Name { get { return _name; } private set { _name = value; } }
     public int Score { get { return _score; } private set { _score = value; } }
-    public string? Description { get { return _description; } set { _description = value; } }
-    public string[] AllergiesList { get { return _allergies; } set { _allergies = value; } }
 
-    // constructors 
+    // constructors
     public Allergies(string name)
     {
-        // add code here to initialize the instance with the given name
         Name = name;
-        ToString(false);
     }
 
     public Allergies(string name, int score)
     {
         Name = name;
         Score = score;
-        string allergies = GetAllergies(Score);
-        bool isAllergic = IsAllergicTo(allergies);
-        ToString(isAllergic);
     }
 
     public Allergies(string name, string allergensString)
     {
         Name = name;
-        AllergiesList = allergensString.Split(' ');
-        foreach (string allergenName in AllergiesList)
+        foreach (string allergenName in allergensString.Split(' '))
         {
             AddAllergy(allergenName);
         }
-        ToString();
     }
 
     public string GetAllergies(int score)
     {
         return string.Join(" ", Enum.GetValues(typeof(Allergen))
-            .Cast()
+            .Cast<Allergen>()
             .Where(a => (score & (int)a) != 0)
             .Select(a => a.ToString()));
     }
@@ -135,11 +123,19 @@ public class Allergies
 
     public override string ToString()
     {
-        string names = GetAllergies(Score);
-        bool isAllergic = !string.IsNullOrEmpty(names);
-        if (isAllergic)
-            return $"{Name} is allergic to {names.Replace(" ", ", ")}";
-        else
-            return $"{Name} initially has no allergies";
+        string[] names = GetAllergies(Score)
+            .Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+        if (names.Length == 0)
+            return $"{Name} has no allergies!";
+
+        if (names.Length == 1)
+            return $"{Name} is allergic to {names[0]}.";
+
+        if (names.Length == 2)
+            return $"{Name} is allergic to {names[0]} and {names[1]}.";
+
+        string allButLast = string.Join(", ", names.Take(names.Length - 1));
+        return $"{Name} is allergic to {allButLast}, and {names[^1]}.";
     }
 }
