@@ -17,3 +17,17 @@ Expected Output :
 
 Sum of all elements stored in the array is : 15
  */
+
+Console.WriteLine("How long would you like your Array to be?");
+int arrLength = Convert.ToInt32(Console.ReadLine());
+int[] numbers = new int[arrLength];
+int sum = 0;
+Console.WriteLine($"Please input {arrLength} numbers for the Array.");
+numbers = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+
+foreach (int i in numbers)
+{
+    sum += i;
+
+}
+Console.WriteLine("The sum of the numbers in the Array is: " + sum);
