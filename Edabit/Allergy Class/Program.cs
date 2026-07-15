@@ -127,16 +127,17 @@ public class Allergies
         string[] names = GetAllergies(Score)
             .Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-        if (names.Length == 0)
-            return $"{Name} has no allergies!";
-
-        if (names.Length == 1)
-            return $"{Name} is allergic to {names[0]}.";
-
-        if (names.Length == 2)
-            return $"{Name} is allergic to {names[0]} and {names[1]}.";
-
-        string allButLast = string.Join(", ", names.Take(names.Length - 1));
-        return $"{Name} is allergic to {allButLast}, and {names[^1]}.";
+        switch (names.Length)
+        {
+            case 0:
+                return $"{Name} has no allergies!";
+            case 1:
+                return $"{Name} is allergic to {names[0]}.";
+            case 2:
+                return $"{Name} is allergic to {names[0]} and {names[1]}.";
+            default:
+                string allButLast = string.Join(", ", names.Take(names.Length - 1));
+                return $"{Name} is allergic to {allButLast}, and {names[^1]}.";
+        }
     }
 }
