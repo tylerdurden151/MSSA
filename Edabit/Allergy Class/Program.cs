@@ -19,13 +19,16 @@ An enumeration type enum called Allergen is already declared in the Code tab and
 The class should have the following members:*/
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 
+
 var mary = new Allergies("Mary");
-
+Console.WriteLine(mary);
 var joe = new Allergies("Joe", 65);
-
+Console.WriteLine(joe);
 var rob = new Allergies("Rob", "Peanuts Chocolate Cats Strawberries");
+Console.WriteLine(rob);
 
 public class Allergies
 {
@@ -43,12 +46,12 @@ public class Allergies
         Cats = 128
     }
 
- 
+
     // properties
     private string? _name;
     private string? _description;
     private int _score;
-    private string [] _allergies;
+    private string[] _allergies;
     public string? Name { get { return _name; } private set { _name = value; } }
     public int Score { get { return _score; } private set { _score = value; } }
     public string? Description { get { return _description; } set { _description = value; } }
@@ -59,24 +62,84 @@ public class Allergies
     {
         // add code here to initialize the instance with the given name
         Name = name;
+        ToString(false);
     }
-    // methods
+
+    public Allergies(string name, int score)
+    {
+        Name = name;
+        Score = score;
+        string allergies = GetAllergies(Score);
+        bool isAllergic = IsAllergicTo(allergies);
+        ToString(isAllergic);
+    }
+
+    public Allergies(string name, string allergensString)
+    {
+        Name = name;
+        AllergiesList = allergensString.Split(' ');
+        foreach (string allergenName in AllergiesList)
+        {
+            AddAllergy(allergenName);
+        }
+        ToString();
+    }
+
+    public string GetAllergies(int score)
+    {
+        return string.Join(" ", Enum.GetValues(typeof(Allergen))
+            .Cast()
+            .Where(a => (score & (int)a) != 0)
+            .Select(a => a.ToString()));
+    }
+
+
+    public bool IsAllergicTo(string allergenName)
+    {
+        if (Enum.TryParse(allergenName, out Allergen allergen))
+        {
+            return IsAllergicTo(allergen);
+        }
+        return false;
+    }
+
     public bool IsAllergicTo(Allergen allergen)
     {
-
+        return (Score & (int)allergen) != 0;
     }
 
-    public AddAllergy() { 
-    
-    }
-
-    public DeleteAllergy()
+    public void AddAllergy(string allergenName)
     {
+        if (Enum.TryParse(allergenName, out Allergen allergen))
+            AddAllergy(allergen);
     }
+
+    public void AddAllergy(Allergen allergen)
+    {
+        if (!IsAllergicTo(allergen))
+            Score += (int)allergen;
+    }
+
+    public void DeleteAllergy(Allergen allergen)   
+    {
+        if (IsAllergicTo(allergen))
+            Score -= (int)allergen;
+    }
+
+    public void DeleteAllergy(string allergenName)   
+    {
+        if (Enum.TryParse(allergenName, out Allergen allergen))
+            DeleteAllergy(allergen);
+    }
+
 
     public override string ToString()
     {
-        // add code here to return string representation of this instance
-        return base.ToString();
+        string names = GetAllergies(Score);
+        bool isAllergic = !string.IsNullOrEmpty(names);
+        if (isAllergic)
+            return $"{Name} is allergic to {names.Replace(" ", ", ")}";
+        else
+            return $"{Name} initially has no allergies";
     }
 }
