@@ -31,3 +31,4 @@ foreach (int i in numbers)
 
 }
 Console.WriteLine("The sum of the numbers in the Array is: " + sum);
+
