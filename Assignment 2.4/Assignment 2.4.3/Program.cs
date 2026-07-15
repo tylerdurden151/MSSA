@@ -17,7 +17,7 @@ point.Run();
 
 public class Point
 {
-    private int _x; 
+    private int _x;
     private int _y;
     public int X { get { return _x; } set { _x = value; } }
     public int Y { get { return _y; } set { _y = value; } }
@@ -33,33 +33,29 @@ public class Point
 
     public void Quadrant(int x, int y)
     {
-        if (x > 0 && y > 0)
+        switch ((x, y))
         {
-            Console.WriteLine($"The coordinate point ({x},{y}) lies in the First quadrant.");
-        }
-        else if (x < 0 && y > 0)
-        {
-            Console.WriteLine($"The coordinate point ({x},{y}) lies in the Second quadrant.");
-        }
-        else if (x < 0 && y < 0)
-        {
-            Console.WriteLine($"The coordinate point ({x},{y}) lies in the Third quadrant.");
-        }
-        else if (x > 0 && y < 0)
-        {
-            Console.WriteLine($"The coordinate point ({x},{y}) lies in the Fourth quadrant.");
-        }
-        else if (x == 0 && y != 0)
-        {
-            Console.WriteLine($"The coordinate point ({x},{y}) lies on the Y axis.");
-        }
-        else if (y == 0 && x != 0)
-        {
-            Console.WriteLine($"The coordinate point ({x},{y}) lies on the X axis.");
-        }
-        else
-        {
-            Console.WriteLine($"The coordinate point ({x},{y}) is at the origin.");
+            case (0, 0):
+                Console.WriteLine($"The coordinate point ({x},{y}) is at the origin.");
+                break;
+            case (0, _):
+                Console.WriteLine($"The coordinate point ({x},{y}) lies on the Y axis.");
+                break;
+            case (_, 0):
+                Console.WriteLine($"The coordinate point ({x},{y}) lies on the X axis.");
+                break;
+            case ( > 0, > 0):
+                Console.WriteLine($"The coordinate point ({x},{y}) lies in the First quadrant.");
+                break;
+            case ( < 0, > 0):
+                Console.WriteLine($"The coordinate point ({x},{y}) lies in the Second quadrant.");
+                break;
+            case ( < 0, < 0):
+                Console.WriteLine($"The coordinate point ({x},{y}) lies in the Third quadrant.");
+                break;
+            case ( > 0, < 0):
+                Console.WriteLine($"The coordinate point ({x},{y}) lies in the Fourth quadrant.");
+                break;
         }
     }
 }
