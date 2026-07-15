@@ -29,6 +29,7 @@ Console.WriteLine(joe);
 var rob = new Allergies("Rob", "Peanuts Chocolate Cats Strawberries");
 Console.WriteLine(rob);
 
+
 public class Allergies
 {
     // do not alter this enum
