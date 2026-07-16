@@ -1,1 +1,4 @@
-<Solution />
+<Solution>
+  <Project Path="Assignment 2.5.1/Assignment 2.5.1.csproj" />
+  <Project Path="Assignment 2.5.2/Assignment 2.5.2.csproj" />
+</Solution>

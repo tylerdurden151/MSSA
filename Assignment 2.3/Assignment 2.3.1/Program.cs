@@ -20,24 +20,26 @@ try
     }
 }
 catch (Exception e)
-{ 
+{
     // Let the user know what went wrong.
     Console.WriteLine("The file could not be read:");
     Console.WriteLine(e.Message);
 }
-        try
+try
+{
+    // Read the details from the same file and print on console.
+    using (StreamReader sr = new StreamReader("Assignment2.3.1_text.txt"))
+    {
+        string line;
+        while ((line = sr.ReadLine()) != null)
         {
-            // Read the details from the same file and print on console.
-            using (StreamReader sr = new StreamReader("Assignment2.3.1_text.txt"))
-            {
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    Console.WriteLine(line);
-                }
-            }
-        } catch (Exception e) {
-            // Let the user know what went wrong.
-            Console.WriteLine("The file could not be read:");
-            Console.WriteLine(e.Message);
-        }       
+            Console.WriteLine(line);
+        }
+    }
+}
+catch (Exception e)
+{
+    // Let the user know what went wrong.
+    Console.WriteLine("The file could not be read:");
+    Console.WriteLine(e.Message);
+}
