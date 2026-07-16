@@ -34,10 +34,12 @@ partial class Form1
         checkedListBox1 = new CheckedListBox();
         flowLayoutPanel1 = new FlowLayoutPanel();
         flowLayoutPanel2 = new FlowLayoutPanel();
-        button1 = new Button();
-        button2 = new Button();
-        button3 = new Button();
-        button4 = new Button();
+        ShowButton = new Button();
+        clearButton = new Button();
+        backgroundButton = new Button();
+        closeButton = new Button();
+        openFileDialog1 = new OpenFileDialog();
+        colorDialog1 = new ColorDialog();
         tableLayoutPanel1.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         flowLayoutPanel2.SuspendLayout();
@@ -103,10 +105,10 @@ partial class Form1
         // 
         // flowLayoutPanel2
         // 
-        flowLayoutPanel2.Controls.Add(button1);
-        flowLayoutPanel2.Controls.Add(button2);
-        flowLayoutPanel2.Controls.Add(button3);
-        flowLayoutPanel2.Controls.Add(button4);
+        flowLayoutPanel2.Controls.Add(ShowButton);
+        flowLayoutPanel2.Controls.Add(clearButton);
+        flowLayoutPanel2.Controls.Add(backgroundButton);
+        flowLayoutPanel2.Controls.Add(closeButton);
         flowLayoutPanel2.Dock = DockStyle.Fill;
         flowLayoutPanel2.FlowDirection = FlowDirection.RightToLeft;
         flowLayoutPanel2.Location = new Point(148, 733);
@@ -114,46 +116,52 @@ partial class Form1
         flowLayoutPanel2.Size = new Size(819, 75);
         flowLayoutPanel2.TabIndex = 4;
         // 
-        // button1
+        // ShowButton
         // 
-        button1.AutoSize = true;
-        button1.Location = new Point(677, 3);
-        button1.Name = "button1";
-        button1.Size = new Size(139, 35);
-        button1.TabIndex = 0;
-        button1.Text = "Show a picture";
-        button1.UseVisualStyleBackColor = true;
-        button1.Click += button1_Click;
+        ShowButton.AutoSize = true;
+        ShowButton.Location = new Point(677, 3);
+        ShowButton.Name = "ShowButton";
+        ShowButton.Size = new Size(139, 35);
+        ShowButton.TabIndex = 0;
+        ShowButton.Text = "Show a picture";
+        ShowButton.UseVisualStyleBackColor = true;
+        ShowButton.Click += button1_Click;
         // 
-        // button2
+        // clearButton
         // 
-        button2.AutoSize = true;
-        button2.Location = new Point(521, 3);
-        button2.Name = "button2";
-        button2.Size = new Size(150, 35);
-        button2.TabIndex = 1;
-        button2.Text = "Clear the picture";
-        button2.UseVisualStyleBackColor = true;
+        clearButton.AutoSize = true;
+        clearButton.Location = new Point(521, 3);
+        clearButton.Name = "clearButton";
+        clearButton.Size = new Size(150, 35);
+        clearButton.TabIndex = 1;
+        clearButton.Text = "Clear the picture";
+        clearButton.UseVisualStyleBackColor = true;
         // 
-        // button3
+        // backgroundButton
         // 
-        button3.AutoSize = true;
-        button3.Location = new Point(271, 3);
-        button3.Name = "button3";
-        button3.Size = new Size(244, 35);
-        button3.TabIndex = 2;
-        button3.Text = "Set the backgroun color";
-        button3.UseVisualStyleBackColor = true;
+        backgroundButton.AutoSize = true;
+        backgroundButton.Location = new Point(271, 3);
+        backgroundButton.Name = "backgroundButton";
+        backgroundButton.Size = new Size(244, 35);
+        backgroundButton.TabIndex = 2;
+        backgroundButton.Text = "Set the backgroun color";
+        backgroundButton.UseVisualStyleBackColor = true;
         // 
-        // button4
+        // closeButton
         // 
-        button4.AutoSize = true;
-        button4.Location = new Point(81, 3);
-        button4.Name = "button4";
-        button4.Size = new Size(184, 35);
-        button4.TabIndex = 3;
-        button4.Text = "Close";
-        button4.UseVisualStyleBackColor = true;
+        closeButton.AutoSize = true;
+        closeButton.Location = new Point(81, 3);
+        closeButton.Name = "closeButton";
+        closeButton.Size = new Size(184, 35);
+        closeButton.TabIndex = 3;
+        closeButton.Text = "Close";
+        closeButton.UseVisualStyleBackColor = true;
+        // 
+        // openFileDialog1
+        // 
+        openFileDialog1.FileName = "openFileDialog1";
+        openFileDialog1.Filter = "JPEG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|All files (*.*)|*.*";
+        openFileDialog1.Title = "Select a picture file";
         // 
         // Form1
         // 
@@ -179,8 +187,10 @@ partial class Form1
     private CheckedListBox checkedListBox1;
     private FlowLayoutPanel flowLayoutPanel1;
     private FlowLayoutPanel flowLayoutPanel2;
-    private Button button1;
-    private Button button2;
-    private Button button3;
-    private Button button4;
+    private Button ShowButton;
+    private Button clearButton;
+    private Button backgroundButton;
+    private Button closeButton;
+    private OpenFileDialog openFileDialog1;
+    private ColorDialog colorDialog1;
 }
