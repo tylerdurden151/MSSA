@@ -31,8 +31,8 @@ partial class Form1
         tableLayoutPanel1 = new TableLayoutPanel();
         pictureBox1 = new PictureBox();
         checkBox1 = new CheckBox();
-        checkedListBox1 = new CheckedListBox();
         flowLayoutPanel1 = new FlowLayoutPanel();
+        checkedListBox1 = new CheckedListBox();
         flowLayoutPanel2 = new FlowLayoutPanel();
         ShowButton = new Button();
         clearButton = new Button();
@@ -87,6 +87,14 @@ partial class Form1
         checkBox1.TabIndex = 1;
         checkBox1.Text = "Stretch";
         checkBox1.UseVisualStyleBackColor = true;
+        checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+        // 
+        // flowLayoutPanel1
+        // 
+        flowLayoutPanel1.Location = new Point(3, 814);
+        flowLayoutPanel1.Name = "flowLayoutPanel1";
+        flowLayoutPanel1.Size = new Size(139, 15);
+        flowLayoutPanel1.TabIndex = 3;
         // 
         // checkedListBox1
         // 
@@ -95,13 +103,6 @@ partial class Form1
         checkedListBox1.Name = "checkedListBox1";
         checkedListBox1.Size = new Size(8, 4);
         checkedListBox1.TabIndex = 2;
-        // 
-        // flowLayoutPanel1
-        // 
-        flowLayoutPanel1.Location = new Point(3, 814);
-        flowLayoutPanel1.Name = "flowLayoutPanel1";
-        flowLayoutPanel1.Size = new Size(139, 15);
-        flowLayoutPanel1.TabIndex = 3;
         // 
         // flowLayoutPanel2
         // 
@@ -136,6 +137,7 @@ partial class Form1
         clearButton.TabIndex = 1;
         clearButton.Text = "Clear the picture";
         clearButton.UseVisualStyleBackColor = true;
+        clearButton.Click += clearButton_Click;
         // 
         // backgroundButton
         // 
@@ -146,6 +148,7 @@ partial class Form1
         backgroundButton.TabIndex = 2;
         backgroundButton.Text = "Set the backgroun color";
         backgroundButton.UseVisualStyleBackColor = true;
+        backgroundButton.Click += backgroundButton_Click;
         // 
         // closeButton
         // 
@@ -156,6 +159,7 @@ partial class Form1
         closeButton.TabIndex = 3;
         closeButton.Text = "Close";
         closeButton.UseVisualStyleBackColor = true;
+        closeButton.Click += closeButton_Click;
         // 
         // openFileDialog1
         // 
