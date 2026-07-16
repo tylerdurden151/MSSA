@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            SuspendLayout();
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Text = "Form1";
+            ClientSize = new Size(478, 344);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Name = "Form1";
+            Text = "Math Quiz";
+            ResumeLayout(false);
         }
 
         #endregion
