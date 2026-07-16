@@ -30,7 +30,7 @@
         {
             timeLabel = new Label();
             label1 = new Label();
-            pluseLeftLabel = new Label();
+            plusLeftLabel = new Label();
             plusRightLabel = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -76,15 +76,15 @@
             label1.TabIndex = 1;
             label1.Text = "Time Left";
             // 
-            // pluseLeftLabel
+            // plusLeftLabel
             // 
-            pluseLeftLabel.Font = new Font("Segoe UI", 18F);
-            pluseLeftLabel.Location = new Point(82, 80);
-            pluseLeftLabel.Name = "pluseLeftLabel";
-            pluseLeftLabel.Size = new Size(60, 50);
-            pluseLeftLabel.TabIndex = 2;
-            pluseLeftLabel.Text = "?";
-            pluseLeftLabel.TextAlign = ContentAlignment.MiddleCenter;
+            plusLeftLabel.Font = new Font("Segoe UI", 18F);
+            plusLeftLabel.Location = new Point(82, 80);
+            plusLeftLabel.Name = "plusLeftLabel";
+            plusLeftLabel.Size = new Size(60, 50);
+            plusLeftLabel.TabIndex = 2;
+            plusLeftLabel.Text = "?";
+            plusLeftLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // plusRightLabel
             // 
@@ -283,6 +283,7 @@
             startButton.TabIndex = 0;
             startButton.Text = "Start the quiz";
             startButton.UseVisualStyleBackColor = true;
+            startButton.Click += startButton_Click;
             // 
             // Form1
             // 
@@ -309,7 +310,7 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(plusRightLabel);
-            Controls.Add(pluseLeftLabel);
+            Controls.Add(plusLeftLabel);
             Controls.Add(label1);
             Controls.Add(timeLabel);
             FormBorderStyle = FormBorderStyle.Fixed3D;
@@ -327,7 +328,7 @@
 
         private Label timeLabel;
         private Label label1;
-        private Label pluseLeftLabel;
+        private Label plusLeftLabel;
         private Label plusRightLabel;
         private Label label3;
         private Label label4;
