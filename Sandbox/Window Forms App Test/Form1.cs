@@ -6,4 +6,8 @@ public partial class Form1 : Form
     {
         InitializeComponent();
     }
+    private void btnClickThis_Click(object sender, EventArgs e)
+    {
+        lblHelloWorld.Text = "Hello World!";
+    }
 }

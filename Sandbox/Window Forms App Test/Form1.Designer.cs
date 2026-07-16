@@ -28,11 +28,44 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
-        components = new System.ComponentModel.Container();
+        btnClickThis = new Button();
+        lblHelloWorld = new Label();
+        SuspendLayout();
+        // 
+        // btnClickThis
+        // 
+        btnClickThis.Location = new Point(304, 165);
+        btnClickThis.Name = "btnClickThis";
+        btnClickThis.Size = new Size(207, 59);
+        btnClickThis.TabIndex = 0;
+        btnClickThis.Text = "Click this";
+        btnClickThis.UseVisualStyleBackColor = true;
+        btnClickThis.Click += btnClickThis_Click;
+        // 
+        // lblHelloWorld
+        // 
+        lblHelloWorld.AutoSize = true;
+        lblHelloWorld.Location = new Point(377, 236);
+        lblHelloWorld.Name = "lblHelloWorld";
+        lblHelloWorld.Size = new Size(59, 25);
+        lblHelloWorld.TabIndex = 1;
+        lblHelloWorld.Text = "label1";
+        // 
+        // Form1
+        // 
+        AutoScaleDimensions = new SizeF(10F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
+        Controls.Add(lblHelloWorld);
+        Controls.Add(btnClickThis);
+        Name = "Form1";
         Text = "Form1";
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
+
+    private Button btnClickThis;
+    private Label lblHelloWorld;
 }
