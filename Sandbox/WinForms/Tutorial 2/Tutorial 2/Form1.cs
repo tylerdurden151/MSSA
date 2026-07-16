@@ -6,5 +6,10 @@ namespace Tutorial_2
         {
             InitializeComponent();
         }
+
+        private void quotient_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

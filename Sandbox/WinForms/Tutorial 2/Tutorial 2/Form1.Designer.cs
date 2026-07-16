@@ -50,6 +50,7 @@
             divide = new Label();
             dividedRightLabel = new Label();
             dividedLeftLabel = new Label();
+            startButton = new Button();
             ((System.ComponentModel.ISupportInitialize)sum).BeginInit();
             ((System.ComponentModel.ISupportInitialize)difference).BeginInit();
             ((System.ComponentModel.ISupportInitialize)product).BeginInit();
@@ -60,7 +61,7 @@
             // 
             timeLabel.BorderStyle = BorderStyle.FixedSingle;
             timeLabel.Font = new Font("Segoe UI", 15.75F);
-            timeLabel.Location = new Point(257, 9);
+            timeLabel.Location = new Point(366, 9);
             timeLabel.Name = "timeLabel";
             timeLabel.Size = new Size(200, 30);
             timeLabel.TabIndex = 0;
@@ -69,7 +70,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15.75F);
-            label1.Location = new Point(99, -6);
+            label1.Location = new Point(194, -6);
             label1.Name = "label1";
             label1.Size = new Size(152, 45);
             label1.TabIndex = 1;
@@ -78,7 +79,7 @@
             // pluseLeftLabel
             // 
             pluseLeftLabel.Font = new Font("Segoe UI", 18F);
-            pluseLeftLabel.Location = new Point(50, 75);
+            pluseLeftLabel.Location = new Point(82, 80);
             pluseLeftLabel.Name = "pluseLeftLabel";
             pluseLeftLabel.Size = new Size(60, 50);
             pluseLeftLabel.TabIndex = 2;
@@ -88,7 +89,7 @@
             // plusRightLabel
             // 
             plusRightLabel.Font = new Font("Segoe UI", 18F);
-            plusRightLabel.Location = new Point(182, 75);
+            plusRightLabel.Location = new Point(236, 80);
             plusRightLabel.Name = "plusRightLabel";
             plusRightLabel.Size = new Size(60, 50);
             plusRightLabel.TabIndex = 3;
@@ -98,7 +99,7 @@
             // label3
             // 
             label3.Font = new Font("Segoe UI", 18F);
-            label3.Location = new Point(116, 75);
+            label3.Location = new Point(170, 80);
             label3.Name = "label3";
             label3.Size = new Size(60, 50);
             label3.TabIndex = 4;
@@ -108,7 +109,7 @@
             // label4
             // 
             label4.Font = new Font("Segoe UI", 18F);
-            label4.Location = new Point(248, 75);
+            label4.Location = new Point(302, 76);
             label4.Name = "label4";
             label4.Size = new Size(60, 50);
             label4.TabIndex = 5;
@@ -118,25 +119,25 @@
             // sum
             // 
             sum.Font = new Font("Segoe UI", 18F);
-            sum.Location = new Point(303, 74);
+            sum.Location = new Point(401, 75);
             sum.MaximumSize = new Size(100, 0);
             sum.Name = "sum";
             sum.Size = new Size(100, 55);
-            sum.TabIndex = 6;
+            sum.TabIndex = 1;
             // 
             // difference
             // 
             difference.Font = new Font("Segoe UI", 18F);
-            difference.Location = new Point(303, 145);
+            difference.Location = new Point(401, 136);
             difference.MaximumSize = new Size(100, 0);
             difference.Name = "difference";
             difference.Size = new Size(100, 55);
-            difference.TabIndex = 11;
+            difference.TabIndex = 2;
             // 
             // label2
             // 
             label2.Font = new Font("Segoe UI", 18F);
-            label2.Location = new Point(248, 146);
+            label2.Location = new Point(302, 141);
             label2.Name = "label2";
             label2.Size = new Size(60, 50);
             label2.TabIndex = 10;
@@ -146,7 +147,7 @@
             // label5
             // 
             label5.Font = new Font("Segoe UI", 18F);
-            label5.Location = new Point(116, 146);
+            label5.Location = new Point(170, 137);
             label5.Name = "label5";
             label5.Size = new Size(60, 50);
             label5.TabIndex = 9;
@@ -156,7 +157,7 @@
             // minusRightLabel
             // 
             minusRightLabel.Font = new Font("Segoe UI", 18F);
-            minusRightLabel.Location = new Point(182, 146);
+            minusRightLabel.Location = new Point(236, 137);
             minusRightLabel.Name = "minusRightLabel";
             minusRightLabel.Size = new Size(60, 50);
             minusRightLabel.TabIndex = 8;
@@ -166,9 +167,9 @@
             // minusLeftLabel
             // 
             minusLeftLabel.Font = new Font("Segoe UI", 18F);
-            minusLeftLabel.Location = new Point(50, 146);
+            minusLeftLabel.Location = new Point(82, 140);
             minusLeftLabel.Name = "minusLeftLabel";
-            minusLeftLabel.Size = new Size(60, 50);
+            minusLeftLabel.Size = new Size(60, 51);
             minusLeftLabel.TabIndex = 7;
             minusLeftLabel.Text = "?";
             minusLeftLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -176,16 +177,16 @@
             // product
             // 
             product.Font = new Font("Segoe UI", 18F);
-            product.Location = new Point(303, 211);
+            product.Location = new Point(401, 202);
             product.MaximumSize = new Size(100, 0);
             product.Name = "product";
             product.Size = new Size(100, 55);
-            product.TabIndex = 16;
+            product.TabIndex = 3;
             // 
             // label6
             // 
             label6.Font = new Font("Segoe UI", 18F);
-            label6.Location = new Point(248, 212);
+            label6.Location = new Point(302, 207);
             label6.Name = "label6";
             label6.Size = new Size(60, 50);
             label6.TabIndex = 15;
@@ -195,7 +196,7 @@
             // label7
             // 
             label7.Font = new Font("Segoe UI", 18F);
-            label7.Location = new Point(116, 212);
+            label7.Location = new Point(170, 203);
             label7.Name = "label7";
             label7.Size = new Size(60, 50);
             label7.TabIndex = 14;
@@ -205,7 +206,7 @@
             // timesRightLabel
             // 
             timesRightLabel.Font = new Font("Segoe UI", 18F);
-            timesRightLabel.Location = new Point(182, 212);
+            timesRightLabel.Location = new Point(236, 203);
             timesRightLabel.Name = "timesRightLabel";
             timesRightLabel.Size = new Size(60, 50);
             timesRightLabel.TabIndex = 13;
@@ -215,7 +216,7 @@
             // timesLeftLabel
             // 
             timesLeftLabel.Font = new Font("Segoe UI", 18F);
-            timesLeftLabel.Location = new Point(50, 212);
+            timesLeftLabel.Location = new Point(82, 203);
             timesLeftLabel.Name = "timesLeftLabel";
             timesLeftLabel.Size = new Size(60, 50);
             timesLeftLabel.TabIndex = 12;
@@ -225,16 +226,17 @@
             // quotient
             // 
             quotient.Font = new Font("Segoe UI", 18F);
-            quotient.Location = new Point(303, 273);
+            quotient.Location = new Point(401, 264);
             quotient.MaximumSize = new Size(100, 0);
             quotient.Name = "quotient";
             quotient.Size = new Size(100, 55);
-            quotient.TabIndex = 21;
+            quotient.TabIndex = 4;
+            quotient.ValueChanged += quotient_ValueChanged;
             // 
             // label10
             // 
             label10.Font = new Font("Segoe UI", 18F);
-            label10.Location = new Point(248, 274);
+            label10.Location = new Point(302, 264);
             label10.Name = "label10";
             label10.Size = new Size(60, 50);
             label10.TabIndex = 20;
@@ -244,7 +246,7 @@
             // divide
             // 
             divide.Font = new Font("Segoe UI", 18F);
-            divide.Location = new Point(116, 274);
+            divide.Location = new Point(170, 265);
             divide.Name = "divide";
             divide.Size = new Size(60, 50);
             divide.TabIndex = 19;
@@ -254,7 +256,7 @@
             // dividedRightLabel
             // 
             dividedRightLabel.Font = new Font("Segoe UI", 18F);
-            dividedRightLabel.Location = new Point(182, 274);
+            dividedRightLabel.Location = new Point(236, 265);
             dividedRightLabel.Name = "dividedRightLabel";
             dividedRightLabel.Size = new Size(60, 50);
             dividedRightLabel.TabIndex = 18;
@@ -264,18 +266,30 @@
             // dividedLeftLabel
             // 
             dividedLeftLabel.Font = new Font("Segoe UI", 18F);
-            dividedLeftLabel.Location = new Point(50, 274);
+            dividedLeftLabel.Location = new Point(82, 264);
             dividedLeftLabel.Name = "dividedLeftLabel";
             dividedLeftLabel.Size = new Size(60, 50);
             dividedLeftLabel.TabIndex = 17;
             dividedLeftLabel.Text = "?";
             dividedLeftLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // startButton
+            // 
+            startButton.AutoSize = true;
+            startButton.Font = new Font("Segoe UI", 14F);
+            startButton.Location = new Point(194, 367);
+            startButton.Name = "startButton";
+            startButton.Size = new Size(191, 48);
+            startButton.TabIndex = 0;
+            startButton.Text = "Start the quiz";
+            startButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(478, 344);
+            ClientSize = new Size(614, 456);
+            Controls.Add(startButton);
             Controls.Add(quotient);
             Controls.Add(label10);
             Controls.Add(divide);
@@ -333,5 +347,6 @@
         private Label divide;
         private Label dividedRightLabel;
         private Label dividedLeftLabel;
+        private Button startButton;
     }
 }
