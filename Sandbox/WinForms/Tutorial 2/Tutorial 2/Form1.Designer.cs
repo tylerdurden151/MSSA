@@ -65,14 +65,14 @@
             timeLabel.Font = new Font("Segoe UI", 15.75F);
             timeLabel.Location = new Point(366, 9);
             timeLabel.Name = "timeLabel";
-            timeLabel.Size = new Size(200, 30);
+            timeLabel.Size = new Size(200, 42);
             timeLabel.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15.75F);
-            label1.Location = new Point(194, -6);
+            label1.Location = new Point(194, 6);
             label1.Name = "label1";
             label1.Size = new Size(152, 45);
             label1.TabIndex = 1;
