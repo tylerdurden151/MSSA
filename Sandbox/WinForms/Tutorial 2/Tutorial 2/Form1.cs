@@ -27,6 +27,10 @@ namespace Tutorial_2
         int dividend;
         int divisor;
 
+        // This integer variable keeps track of the 
+        // remaining time.
+        int timeLeft;
+
         /// <summary>
         /// Start the quiz by filling in all of the problem 
         /// values and starting the timer. 
