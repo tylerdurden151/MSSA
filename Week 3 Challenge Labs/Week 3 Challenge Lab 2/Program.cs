@@ -14,15 +14,18 @@ SumDigitsInString("") → 0
  */
 
 
-var result = SumDigitsInString("");
+var result = SumDigitsInString("L0r3m.1p5um");
 Console.WriteLine(result);
 
 int SumDigitsInString(string s)
 {
-    int count = 0;
+    int sum = 0;
     foreach (char c in s)
     {
-        count++;
+      if (int.TryParse(c.ToString(), out int value)) {
+
+            sum += value; 
+        }
     }
-    return count;
+    return sum;
 }
