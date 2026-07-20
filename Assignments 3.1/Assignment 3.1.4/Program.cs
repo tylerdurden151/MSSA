@@ -19,15 +19,19 @@ Array.ForEach(result2, Console.WriteLine);
 
 public class Solution
 {
+    private int[] _numbers;
+    public int[] Numbers { get { return _numbers; } set { _numbers = value; } }
+
     public int[] ConsecutiveOnes(int[] nums)
     {
-        int[] result = new int[nums.Length];
-        Array.Copy(nums, result, nums.Length);
+        Numbers = nums;
+        int[] result = new int[Numbers.Length];
+        Array.Copy(Numbers, result, Numbers.Length);
 
-        for (int i = 0; i < nums.Length; i++)
+        for (int i = 0; i < Numbers.Length; i++)
         {
-            int right = nums[i + 1];
-            int left = nums[i];
+            int right = Numbers[i + 1];
+            int left = Numbers[i];
             if (left == 1 && right == 1)
             {
                 result[i] = 0;
