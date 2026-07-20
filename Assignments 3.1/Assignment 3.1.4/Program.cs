@@ -6,29 +6,29 @@ For e.g: Input : [0,2,1,1,9,1,1]
 
 Output: [0,2,0,0,9,1,1]
  */
+Solution s = new Solution();
+int[] result1 = s.ConsecutiveOnes(new int[] {0,2,1,1,9,1,1});
+Array.ForEach(result1, Console.WriteLine);
 
 public class Solution
 {
     public int[] ConsecutiveOnes(int[] nums)
     {
-        int left = 0;
-        int curr = 0;
         int[] result = new int[nums.Length];
+        Array.Copy(nums, result, nums.Length);
 
-        for (int right = 0; right < nums.Length; right++) {
-            if (nums[right] == 1)
+        for (int i = 0; i < nums.Length; i++)
+        {
+            int right = nums[i + 1];
+            int left = nums[i];
+            if (left == 1 && right == 1)
             {
-                curr++;
+                result[i] = 0;
+                result[i + 1] = 0;
+                break;
             }
-            while (curr > 1)
-            {
-                if (nums[left] == 1)
-                {
-                    curr--;
-                }
-                left++;
-            }
-            result[curr] = curr;
-
+        }
+        return result;
+    }
 
 }
