@@ -10,11 +10,12 @@ Expected Output :
 
 using System.Text;
 
+Console.WriteLine("Enter a string: ");
+string? res = Console.ReadLine();
+var result = SpacesInString(res);
+Console.WriteLine($"{res} contains {result} spaces");
 
-var result = SpacesInString("This is a test string.");
-Console.WriteLine(result);
-
-int SpacesInString(string value) { 
+int SpacesInString(string? value) { 
     
     char [] chars = value.ToCharArray();
     int count = 0;
