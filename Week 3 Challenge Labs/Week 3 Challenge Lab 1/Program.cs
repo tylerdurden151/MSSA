@@ -13,10 +13,13 @@ IsPalindrome("home") → false
  
  */
 
-var result = IsPalindrome("stoots");
+var result = IsPalindrome("eye");
+var result2 = IsPalindrome("home");
 Console.WriteLine(result);
+Console.WriteLine(result2);
 
 bool IsPalindrome(string p) {
+    p = p.ToLower();
     char [] chars = p.ToCharArray();
     int left = 0;
     int right = chars.Length - 1;
@@ -29,7 +32,7 @@ bool IsPalindrome(string p) {
         right--;
         left++;
     }
-    if (chars.ToString() == p)
+    if (new string(chars) == p)
     {
         return true;
     }
