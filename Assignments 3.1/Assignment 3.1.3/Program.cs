@@ -8,7 +8,6 @@ Expected Output :
  
  */
 
-using System.Text;
 
 Console.WriteLine("Enter a string: ");
 string? res = Console.ReadLine();
