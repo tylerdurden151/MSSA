@@ -10,6 +10,13 @@ Solution s = new Solution();
 int[] result1 = s.ConsecutiveOnes(new int[] {0,2,1,1,9,1,1});
 Array.ForEach(result1, Console.WriteLine);
 
+Solution s1 = new Solution();
+Console.WriteLine("Enter your array numbers, separated by spaces: ");
+int[] numbers = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+int[] result2 = s1.ConsecutiveOnes(numbers);
+Array.ForEach(result2, Console.WriteLine);
+
+
 public class Solution
 {
     public int[] ConsecutiveOnes(int[] nums)
