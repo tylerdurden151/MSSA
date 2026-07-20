@@ -12,7 +12,14 @@ Array.ForEach(result1, Console.WriteLine);
 
 Solution s1 = new Solution();
 Console.WriteLine("Enter your array numbers, separated by spaces: ");
-int[] numbers = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+string[] tokens = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+int[] numbers = new int[tokens.Length];
+
+for (int i = 0; i < tokens.Length; i++)
+{
+    int.TryParse(tokens[i], out numbers[i]);
+}
+
 int[] result2 = s1.ConsecutiveOnes(numbers);
 Array.ForEach(result2, Console.WriteLine);
 
