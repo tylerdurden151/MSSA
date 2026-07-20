@@ -17,6 +17,9 @@ using System.Text;
 var result = ReturnEvenNumbers();
 Console.WriteLine(result);
 
+var result_1 = EvenNumbers();
+Console.WriteLine(result_1);
+
 
 string ReturnEvenNumbers()
 {
@@ -30,4 +33,21 @@ string ReturnEvenNumbers()
         }
     }
     return evenNumbers.ToString();
+}
+
+string EvenNumbers()
+{
+    StringBuilder evenNumbers_1 = new StringBuilder();
+    for (int i = 1; i < 100; i++)
+    {
+        if (i % 2 == 0)
+        {
+            evenNumbers_1.Append(i);
+            if (i < 98)
+            {
+                evenNumbers_1.Append(" ");
+            }
+        }
+    }
+    return evenNumbers_1.ToString();
 }
