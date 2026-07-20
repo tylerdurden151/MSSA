@@ -12,3 +12,22 @@ ReturnEvenNumbers() → "2 4 6 8 10 12 14 16 18 20 22 24 26 28 30
 80 82 84 86 88 90 92 94 96 98"
  
  */
+
+using System.Text;
+var result = ReturnEvenNumbers();
+Console.WriteLine(result);
+
+
+string ReturnEvenNumbers()
+{
+    StringBuilder evenNumbers = new StringBuilder();
+    for (int i = 2; i < 100; i += 2)
+    {
+        evenNumbers.Append(i);
+        if (i < 98)
+        {
+            evenNumbers.Append(" ");
+        }
+    }
+    return evenNumbers.ToString();
+}
