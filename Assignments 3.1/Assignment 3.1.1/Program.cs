@@ -35,6 +35,7 @@ string ReturnEvenNumbers()
     return evenNumbers.ToString();
 }
 
+// Another way to do it
 string EvenNumbers()
 {
     StringBuilder evenNumbers_1 = new StringBuilder();
