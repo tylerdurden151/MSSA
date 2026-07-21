@@ -13,3 +13,51 @@ The average of 10 , 15 , 20 , 30 is: 18.75
 The total is 75
  
  */
+FourNumbers f = new FourNumbers();
+f.RunMenu();
+
+
+public class FourNumbers
+{
+    private int[] _number = Array.Empty<int>();
+    public int[] Number
+    {
+        get { return _number; }
+        set { _number = value; }
+    }
+
+    public void RunMenu()
+    {
+        Number = new int[4];
+        for (int i = 0; i < Number.Length; i++)
+        {
+            Console.Write($"Enter number {i + 1}: ");
+            int value;
+            while (!int.TryParse(Console.ReadLine(), out value))
+            {
+                Console.WriteLine("Please enter a whole number.");
+            }
+            Number[i] = value;
+        }
+        int total = CalculateTotal(Number);
+        double average = CalculateAverage(Number);
+        Console.WriteLine($"The average of {Number[0]} , {Number[1]} , {Number[2]} , {Number[3]} is: {average}");
+        Console.WriteLine($"The total is {total}");
+    }
+    private int CalculateTotal(params int[] numbers)
+    {
+        int total = 0;
+        foreach (int number in numbers)
+        {
+            total += number;
+        }
+        return total;
+    }
+    private double CalculateAverage(params int[] numbers)
+    {
+        int total = CalculateTotal(numbers);
+        return (double)total / numbers.Length;
+    }
+
+
+} 
