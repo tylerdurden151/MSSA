@@ -29,6 +29,7 @@ public class TwoDArray
         int count = 0;
         foreach (int n in Number)
         {
+            //New line | 
             if (count % 3 == 0)
             {
                 Console.Write("|");
