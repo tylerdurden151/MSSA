@@ -82,40 +82,42 @@ public class MatrixAddition
 
     }
 
+    //Gets values Matrix Values from user
     private int[,] ReadMatrix(int size)
     {
         int[,] matrix = new int[size, size];
 
-        for (int r = 0; r < size; r++)
+        for (int i = 0; i < size; i++)
         {
-            for (int c = 0; c < size; c++)
+            for (int j = 0; j < size; j++)
             {
                 int val;
                 while (true)
                 {
-                    Console.Write($"element - [{r}],[{c}] : ");
+                    Console.Write($"element - [{i}],[{j}] : ");
                     if (int.TryParse(Console.ReadLine(), out val))
                     {
                         break;
                     }
                     Console.WriteLine("Please enter a whole number.");
                 }
-                matrix[r, c] = val;
+                matrix[i, j] = val;
             }
         }
         return matrix;
     }
 
-    public int[,] CalculateMatrix(int[,] first, int[,] second)
+    //Adds the 2 Matrixs together
+    private int[,] CalculateMatrix(int[,] first, int[,] second)
     {
         int size = first.GetLength(0);
         int[,] result = new int[size, size];
 
-        for (int r = 0; r < size; r++)
+        for (int i = 0; i < size; i++)
         {
-            for (int c = 0; c < size; c++)
+            for (int j = 0; j < size; j++)
             {
-                result[r, c] = first[r, c] + second[r, c];
+                result[i, j] = first[i, j] + second[i, j];
             }
         }
         return result;
@@ -128,22 +130,23 @@ public class MatrixAddition
 
         // find the widest number across all cells
         int width = 0;
-        for (int r = 0; r < size; r++)
+        for (int i = 0; i < size; i++)
         {
-            for (int c = 0; c < size; c++)
+            for (int j = 0; j < size; j++)
             {
-                int len = matrix[r, c].ToString().Length;
+                int len = matrix[i, j].ToString().Length;
                 if (len > width)
                 {
                     width = len;
                 }
             }
         }
-        for (int r = 0; r < size; r++)
+        //Display matrix
+        for (int i = 0; i < size; i++)
         {
-            for (int c = 0; c < size; c++)
+            for (int j = 0; j < size; j++)
             {
-                Console.Write(matrix[r, c].ToString().PadLeft(width) + " ");
+                Console.Write(matrix[i, j].ToString().PadLeft(width) + " ");
             }
             Console.WriteLine();
         }
