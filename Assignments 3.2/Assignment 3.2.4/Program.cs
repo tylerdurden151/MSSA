@@ -41,8 +41,8 @@ public class FourNumbers
         }
         int total = CalculateTotal(Number);
         double average = CalculateAverage(Number);
-        Console.WriteLine($"The average of {Number[0]} , {Number[1]} , {Number[2]} , {Number[3]} is: {average}");
-        Console.WriteLine($"The total is {total}");
+        DisplayResults(total, average);
+
     }
     private int CalculateTotal(params int[] numbers)
     {
@@ -59,5 +59,9 @@ public class FourNumbers
         return (double)total / numbers.Length;
     }
 
-
+    private void DisplayResults(int total, double average)
+    {
+        Console.WriteLine($"The average of {Number[0]} , {Number[1]} , {Number[2]} , {Number[3]} is: {average}");
+        Console.WriteLine($"The total is {total}");
+    }
 } 
