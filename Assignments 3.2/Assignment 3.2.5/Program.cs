@@ -36,12 +36,14 @@ public class Solution
 
     public int Search()
     {
-        for (int i = 0; i < Arr.Length; i++)
+        int index = 0;
+        foreach (int item in Arr)
         {
-            if (Arr[i] == K)
+            if (item == K)
             {
-                return i;
+                return index;
             }
+            index++;
         }
         return -1;
     }
