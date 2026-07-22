@@ -34,10 +34,14 @@
             typcbo = new ComboBox();
             txtName = new TextBox();
             txtPrice = new TextBox();
-            txtRoastLevel = new TextBox();
             chkHasMilk = new CheckBox();
             chkHasSugar = new CheckBox();
             chkIsDecaf = new CheckBox();
+            Namelbl = new Label();
+            Pricelbl = new Label();
+            roastlbl = new Label();
+            typelbl = new Label();
+            roastlvlcbo = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -52,6 +56,7 @@
             // 
             // addbtn
             // 
+            addbtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             addbtn.Location = new Point(56, 409);
             addbtn.Name = "addbtn";
             addbtn.Size = new Size(303, 53);
@@ -62,6 +67,7 @@
             // 
             // deletebtn
             // 
+            deletebtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             deletebtn.Location = new Point(462, 411);
             deletebtn.Name = "deletebtn";
             deletebtn.Size = new Size(303, 51);
@@ -92,19 +98,13 @@
             txtPrice.Size = new Size(233, 31);
             txtPrice.TabIndex = 5;
             // 
-            // txtRoastLevel
-            // 
-            txtRoastLevel.Location = new Point(553, 295);
-            txtRoastLevel.Name = "txtRoastLevel";
-            txtRoastLevel.Size = new Size(233, 31);
-            txtRoastLevel.TabIndex = 6;
-            // 
             // chkHasMilk
             // 
             chkHasMilk.AutoSize = true;
+            chkHasMilk.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             chkHasMilk.Location = new Point(815, 276);
             chkHasMilk.Name = "chkHasMilk";
-            chkHasMilk.Size = new Size(114, 29);
+            chkHasMilk.Size = new Size(120, 29);
             chkHasMilk.TabIndex = 7;
             chkHasMilk.Text = "Has Milk?";
             chkHasMilk.UseVisualStyleBackColor = true;
@@ -112,9 +112,10 @@
             // chkHasSugar
             // 
             chkHasSugar.AutoSize = true;
+            chkHasSugar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             chkHasSugar.Location = new Point(815, 311);
             chkHasSugar.Name = "chkHasSugar";
-            chkHasSugar.Size = new Size(127, 29);
+            chkHasSugar.Size = new Size(132, 29);
             chkHasSugar.TabIndex = 8;
             chkHasSugar.Text = "Has Sugar?";
             chkHasSugar.UseVisualStyleBackColor = true;
@@ -122,22 +123,76 @@
             // chkIsDecaf
             // 
             chkIsDecaf.AutoSize = true;
+            chkIsDecaf.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             chkIsDecaf.Location = new Point(815, 346);
             chkIsDecaf.Name = "chkIsDecaf";
-            chkIsDecaf.Size = new Size(109, 29);
+            chkIsDecaf.Size = new Size(115, 29);
             chkIsDecaf.TabIndex = 9;
             chkIsDecaf.Text = "Is Decaf?";
             chkIsDecaf.UseVisualStyleBackColor = true;
+            // 
+            // Namelbl
+            // 
+            Namelbl.AutoSize = true;
+            Namelbl.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            Namelbl.Location = new Point(114, 267);
+            Namelbl.Name = "Namelbl";
+            Namelbl.Size = new Size(62, 25);
+            Namelbl.TabIndex = 10;
+            Namelbl.Text = "Name";
+            Namelbl.Click += label1_Click;
+            // 
+            // Pricelbl
+            // 
+            Pricelbl.AutoSize = true;
+            Pricelbl.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            Pricelbl.Location = new Point(375, 267);
+            Pricelbl.Name = "Pricelbl";
+            Pricelbl.Size = new Size(54, 25);
+            Pricelbl.TabIndex = 11;
+            Pricelbl.Text = "Price";
+            // 
+            // roastlbl
+            // 
+            roastlbl.AutoSize = true;
+            roastlbl.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            roastlbl.Location = new Point(606, 267);
+            roastlbl.Name = "roastlbl";
+            roastlbl.Size = new Size(104, 25);
+            roastlbl.TabIndex = 12;
+            roastlbl.Text = "RoastLevel";
+            // 
+            // typelbl
+            // 
+            typelbl.AutoSize = true;
+            typelbl.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            typelbl.Location = new Point(1073, 267);
+            typelbl.Name = "typelbl";
+            typelbl.Size = new Size(53, 25);
+            typelbl.TabIndex = 13;
+            typelbl.Text = "Type";
+            // 
+            // roastlvlcbo
+            // 
+            roastlvlcbo.FormattingEnabled = true;
+            roastlvlcbo.Location = new Point(560, 295);
+            roastlvlcbo.Name = "roastlvlcbo";
+            roastlvlcbo.Size = new Size(217, 33);
+            roastlvlcbo.TabIndex = 14;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1266, 489);
+            Controls.Add(roastlvlcbo);
+            Controls.Add(typelbl);
+            Controls.Add(roastlbl);
+            Controls.Add(Pricelbl);
+            Controls.Add(Namelbl);
             Controls.Add(chkIsDecaf);
             Controls.Add(chkHasSugar);
             Controls.Add(chkHasMilk);
-            Controls.Add(txtRoastLevel);
             Controls.Add(txtPrice);
             Controls.Add(txtName);
             Controls.Add(typcbo);
@@ -159,9 +214,13 @@
         private ComboBox typcbo;
         private TextBox txtName;
         private TextBox txtPrice;
-        private TextBox txtRoastLevel;
         private CheckBox chkHasMilk;
         private CheckBox chkHasSugar;
         private CheckBox chkIsDecaf;
+        private Label Namelbl;
+        private Label Pricelbl;
+        private Label roastlbl;
+        private Label typelbl;
+        private ComboBox roastlvlcbo;
     }
 }

@@ -6,7 +6,7 @@ namespace Assignments_3._4
 {
     internal class Coffee : Beverage
     {
-        public string RoastLevel { get; set; } = "";
+        public RoastLevel Level { get; set; }
         public bool HasMilk { get; set; }
         public bool HasSugar { get; set; }
         public bool IsDecaf { get; set; }

@@ -14,7 +14,7 @@ namespace Assignments_3._4
             {
                 Name = "Vanilla Latte",
                 Price = 4.50m,
-                RoastLevel = "Medium",
+                Level = RoastLevel.Medium,
                 HasMilk = true,
                 HasSugar = false,
                 IsDecaf = false,
@@ -25,7 +25,7 @@ namespace Assignments_3._4
             {
                 Name = "Double Espresso",
                 Price = 3.25m,
-                RoastLevel = "Dark",
+                Level = RoastLevel.Dark,
                 HasMilk = false,
                 HasSugar = true,
                 IsDecaf = true,
@@ -35,6 +35,7 @@ namespace Assignments_3._4
             dataGridView1.DataSource = coffees;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ReadOnly = true;
+            roastlvlcbo.DataSource =Enum.GetValues(typeof(RoastLevel));
             typcbo.DataSource = Enum.GetValues(typeof(CoffeeType));
 
         }
@@ -62,7 +63,7 @@ namespace Assignments_3._4
             {
                 Name = txtName.Text,
                 Price = price,
-                RoastLevel = txtRoastLevel.Text,
+                Level = (RoastLevel)roastlvlcbo.SelectedItem,
                 HasMilk = chkHasMilk.Checked,
                 HasSugar = chkHasSugar.Checked,
                 IsDecaf = chkIsDecaf.Checked,
@@ -72,10 +73,16 @@ namespace Assignments_3._4
 
             txtName.Clear();
             txtPrice.Clear();
-            txtRoastLevel.Clear();
+            roastlvlcbo.SelectedIndex = -1;
+            typcbo.SelectedIndex = -1;
             chkHasMilk.Checked = false;
             chkHasSugar.Checked = false;
             chkIsDecaf.Checked = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
