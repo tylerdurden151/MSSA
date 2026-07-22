@@ -47,7 +47,11 @@ namespace Assignments_3._4
                 return;
             }
 
-            Coffee selected = (Coffee)dataGridView1.CurrentRow.DataBoundItem;
+            if (dataGridView1.CurrentRow.DataBoundItem is not Coffee selected)
+            {
+                return;
+            }
+
             coffees.Remove(selected);
         }
 
@@ -56,6 +60,12 @@ namespace Assignments_3._4
             if (!decimal.TryParse(txtPrice.Text, out decimal price))
             {
                 MessageBox.Show("Enter a valid price.");
+                return;
+            }
+
+            if (roastlvlcbo.SelectedItem == null || typcbo.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a roast level and coffee type.");
                 return;
             }
 
