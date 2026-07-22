@@ -37,8 +37,11 @@ namespace Assignments_3._4
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ReadOnly = true;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
-            roastlvlcbo.DataSource =Enum.GetValues(typeof(RoastLevel));
+            picCoffee.SizeMode = PictureBoxSizeMode.Zoom;
+            roastlvlcbo.DataSource = Enum.GetValues(typeof(RoastLevel));
             typcbo.DataSource = Enum.GetValues(typeof(CoffeeType));
+            roastlvlcbo.SelectedIndex = -1;
+            typcbo.SelectedIndex = -1;
 
         }
 
@@ -65,7 +68,7 @@ namespace Assignments_3._4
                 return;
             }
 
-            if (roastlvlcbo.SelectedItem == null || typcbo.SelectedItem == null)
+            if (roastlvlcbo.SelectedItem is not RoastLevel level || typcbo.SelectedItem is not CoffeeType type)
             {
                 MessageBox.Show("Please select a roast level and coffee type.");
                 return;
@@ -75,11 +78,11 @@ namespace Assignments_3._4
             {
                 Name = txtName.Text,
                 Price = price,
-                Level = (RoastLevel)roastlvlcbo.SelectedItem,
+                Level = level,
                 HasMilk = chkHasMilk.Checked,
                 HasSugar = chkHasSugar.Checked,
                 IsDecaf = chkIsDecaf.Checked,
-                Type = (CoffeeType)typcbo.SelectedItem
+                Type = type
             };
             coffees.Add(c);
 
@@ -92,7 +95,7 @@ namespace Assignments_3._4
             chkIsDecaf.Checked = false;
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridView1_SelectionChanged(object? sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow?.DataBoundItem is not Coffee selected)
             {
@@ -114,6 +117,11 @@ namespace Assignments_3._4
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void picCoffee_Click(object sender, EventArgs e)
+        {
+            picCoffee.SizeMode = PictureBoxSizeMode.Zoom;
         }
     }
 }

@@ -189,6 +189,7 @@
             picCoffee.Size = new Size(339, 224);
             picCoffee.TabIndex = 15;
             picCoffee.TabStop = false;
+            picCoffee.Click += picCoffee_Click;
             // 
             // Form1
             // 
