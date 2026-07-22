@@ -28,17 +28,44 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
+        dataGridView1 = new DataGridView();
+        cboMonth = new ComboBox();
+        ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         SuspendLayout();
+        // 
+        // dataGridView1
+        // 
+        dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dataGridView1.Location = new Point(30, 56);
+        dataGridView1.Name = "dataGridView1";
+        dataGridView1.RowHeadersWidth = 62;
+        dataGridView1.Size = new Size(1011, 231);
+        dataGridView1.TabIndex = 0;
+        dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+        // 
+        // cboMonth
+        // 
+        cboMonth.FormattingEnabled = true;
+        cboMonth.Location = new Point(30, 338);
+        cboMonth.Name = "cboMonth";
+        cboMonth.Size = new Size(182, 33);
+        cboMonth.TabIndex = 1;
         // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(10F, 25F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(800, 450);
+        ClientSize = new Size(1075, 774);
+        Controls.Add(cboMonth);
+        Controls.Add(dataGridView1);
         Name = "Form1";
         Text = "Form1";
+        ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
         ResumeLayout(false);
     }
 
     #endregion
+
+    private DataGridView dataGridView1;
+    private ComboBox cboMonth;
 }
