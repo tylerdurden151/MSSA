@@ -12,7 +12,7 @@ namespace Assignment_3._3._1
         public string FirstName { get; set; } = "";
         public string LastName { get; set; } = "";
         public string Address { get; set; } = "";
-        public Month MonthOfAdmission { get; set; } 
+        public string MonthOfAdmission { get; set; } = "";
         public char Grade { get { return _grade; } set { _grade = value; }  }
 
     }

@@ -10,14 +10,11 @@ public partial class Form1 : Form
     {
         InitializeComponent();
 
-        students.Add(new Student { StudentId = 1, FirstName = "John", LastName = "Doe", Address = "123 Main St", MonthOfAdmission = Month.January, Grade = 'A' });
-        students.Add(new Student { StudentId = 2, FirstName = "Jane", LastName = "Smith", Address = "456 Elm St", MonthOfAdmission = Month.February, Grade = 'B' });
-        students.Add(new Student { StudentId = 3, FirstName = "Bob", LastName = "Johnson", Address = "789 Oak St", MonthOfAdmission = Month.March, Grade = 'C' });
+        students.Add(new Student { StudentId = 1, FirstName = "John", LastName = "Doe", Address = "123 Main St", MonthOfAdmission = "January", Grade = 'A' });
+        students.Add(new Student { StudentId = 2, FirstName = "Jane", LastName = "Smith", Address = "456 Elm St", MonthOfAdmission = "February", Grade = 'B' });
+        students.Add(new Student { StudentId = 3, FirstName = "Bob", LastName = "Johnson", Address = "789 Oak St", MonthOfAdmission = "March", Grade = 'C' });
 
         dataGridView1.DataSource = students;
-        dataGridView1.ReadOnly = true;
-        dataGridView1.AllowUserToAddRows = false;
-        cboMonth.DataSource = Enum.GetValues(typeof(Month));
 
     }
 
