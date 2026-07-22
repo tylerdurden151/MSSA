@@ -42,7 +42,9 @@
             roastlbl = new Label();
             typelbl = new Label();
             roastlvlcbo = new ComboBox();
+            picCoffee = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picCoffee).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -68,7 +70,7 @@
             // deletebtn
             // 
             deletebtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            deletebtn.Location = new Point(462, 411);
+            deletebtn.Location = new Point(440, 409);
             deletebtn.Name = "deletebtn";
             deletebtn.Size = new Size(303, 51);
             deletebtn.TabIndex = 2;
@@ -180,11 +182,20 @@
             roastlvlcbo.Size = new Size(217, 33);
             roastlvlcbo.TabIndex = 14;
             // 
+            // picCoffee
+            // 
+            picCoffee.Location = new Point(936, 378);
+            picCoffee.Name = "picCoffee";
+            picCoffee.Size = new Size(339, 224);
+            picCoffee.TabIndex = 15;
+            picCoffee.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1266, 489);
+            ClientSize = new Size(1349, 666);
+            Controls.Add(picCoffee);
             Controls.Add(roastlvlcbo);
             Controls.Add(typelbl);
             Controls.Add(roastlbl);
@@ -202,6 +213,7 @@
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picCoffee).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -222,5 +234,6 @@
         private Label roastlbl;
         private Label typelbl;
         private ComboBox roastlvlcbo;
+        private PictureBox picCoffee;
     }
 }

@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Xml.Linq;
 
+
 namespace Assignments_3._4
 {
     public partial class Form1 : Form
@@ -35,6 +36,7 @@ namespace Assignments_3._4
             dataGridView1.DataSource = coffees;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ReadOnly = true;
+            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             roastlvlcbo.DataSource =Enum.GetValues(typeof(RoastLevel));
             typcbo.DataSource = Enum.GetValues(typeof(CoffeeType));
 
@@ -90,6 +92,25 @@ namespace Assignments_3._4
             chkIsDecaf.Checked = false;
         }
 
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow?.DataBoundItem is not Coffee selected)
+            {
+                picCoffee.Image = null;
+                return;
+            }
+
+            string path = $"Images\\{selected.Type}.png";
+
+            if (File.Exists(path))
+            {
+                picCoffee.ImageLocation = path;
+            }
+            else
+            {
+                picCoffee.Image = null;
+            }
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
