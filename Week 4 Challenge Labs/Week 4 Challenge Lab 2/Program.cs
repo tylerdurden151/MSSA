@@ -9,11 +9,15 @@ DivisibleBy2Or3(15, 30) → 450 DivisibleBy2Or3(2, 90) → 180 DivisibleBy2Or3(7
  */
 int result = Solution(15, 30);
 int result2 = Solution(15, 31);
-int result3 = Solution(15, 30);
+int result3 = Solution(8, 9);
+int result4 = Solution(7, 12);
+int result5 = Solution(2, 90);
 
 Console.WriteLine(result);
 Console.WriteLine(result2);
 Console.WriteLine(result3);
+Console.WriteLine(result4);
+Console.WriteLine(result5);
 
 
 
