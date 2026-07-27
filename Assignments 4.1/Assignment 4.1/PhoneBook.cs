@@ -17,12 +17,13 @@ namespace Assignment_4._1
         // person is the object of the Person class that contains the person's information
         public void AddPerson(Person person)
         {
-            _phoneBook[person.Name] = person;
+            string key = $"{person.Name} {person.LastName}";
+            _phoneBook[key] = person;
         }
 
-        public void DeletePerson(string name)
+        public bool DeletePerson(string name)
         {
-            _phoneBook.Remove(name);
+            return _phoneBook.Remove(name);
         }
 
         public Person SearchPerson(string name)

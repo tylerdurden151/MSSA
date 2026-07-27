@@ -17,10 +17,10 @@ namespace Assignment_4._1
     {
         private string _name;
         private string _lastName;
-        public string address { get; set; }
-        public int MobileNumber { get; set; }
-        public int WorkNumber { get; set; }
-        public int HomeNumber { get; set; }
+        public string Address { get; set; }
+        public string MobileNumber { get; set; }
+        public string WorkNumber { get; set; }
+        public string HomeNumber { get; set; }
         public string Name
         {
             get { return _name; }
