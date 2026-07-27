@@ -13,14 +13,23 @@ using System.Text;
 
 namespace Assignment_4._1
 {
-    internal abstract class Person
+    internal class Person
     {
-        private string name;
-        private string lastName;
-        public Address address;
-        public PhoneNumber phoneNumber1;
-        public PhoneNumber phoneNumber2;
-        public PhoneNumber phoneNumber3;
-
+        private string _name;
+        private string _lastName;
+        public string address { get; set; }
+        public int MobileNumber { get; set; }
+        public int WorkNumber { get; set; }
+        public int HomeNumber { get; set; }
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+        public string LastName
+        {
+            get { return _lastName; }
+            set { _lastName = value; }
+        }
     }
 }
