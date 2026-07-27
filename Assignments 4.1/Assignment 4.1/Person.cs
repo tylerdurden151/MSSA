@@ -24,12 +24,20 @@ namespace Assignment_4._1
         public string Name
         {
             get { return _name; }
-            set { _name = value; }
+            set {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Name cannot be empty.");
+                _name = value;
+            }
         }
         public string LastName
         {
             get { return _lastName; }
-            set { _lastName = value; }
+            set {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Last name cannot be empty.");
+                _lastName = value;
+            }
         }
     }
 }

@@ -52,12 +52,12 @@
             dataGridView1.Location = new Point(26, 16);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 82;
-            dataGridView1.Size = new Size(978, 184);
+            dataGridView1.Size = new Size(1439, 184);
             dataGridView1.TabIndex = 0;
             // 
             // addbtn
             // 
-            addbtn.Location = new Point(53, 436);
+            addbtn.Location = new Point(158, 436);
             addbtn.Name = "addbtn";
             addbtn.Size = new Size(173, 39);
             addbtn.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             // dltbtn
             // 
-            dltbtn.Location = new Point(755, 436);
+            dltbtn.Location = new Point(1153, 445);
             dltbtn.Name = "dltbtn";
             dltbtn.Size = new Size(173, 39);
             dltbtn.TabIndex = 2;
@@ -77,42 +77,42 @@
             // 
             // firstNtxtbx
             // 
-            firstNtxtbx.Location = new Point(26, 244);
+            firstNtxtbx.Location = new Point(219, 244);
             firstNtxtbx.Name = "firstNtxtbx";
             firstNtxtbx.Size = new Size(200, 39);
             firstNtxtbx.TabIndex = 3;
             // 
             // lastNtxtbx
             // 
-            lastNtxtbx.Location = new Point(286, 244);
+            lastNtxtbx.Location = new Point(585, 244);
             lastNtxtbx.Name = "lastNtxtbx";
             lastNtxtbx.Size = new Size(200, 39);
             lastNtxtbx.TabIndex = 4;
             // 
             // addtxtbx
             // 
-            addtxtbx.Location = new Point(528, 244);
+            addtxtbx.Location = new Point(906, 244);
             addtxtbx.Name = "addtxtbx";
             addtxtbx.Size = new Size(476, 39);
             addtxtbx.TabIndex = 5;
             // 
             // mobileNtxtbox
             // 
-            mobileNtxtbox.Location = new Point(119, 340);
+            mobileNtxtbox.Location = new Point(198, 340);
             mobileNtxtbox.Name = "mobileNtxtbox";
             mobileNtxtbox.Size = new Size(232, 39);
             mobileNtxtbox.TabIndex = 6;
             // 
             // workNtxtbx
             // 
-            workNtxtbx.Location = new Point(420, 340);
+            workNtxtbx.Location = new Point(553, 340);
             workNtxtbx.Name = "workNtxtbx";
             workNtxtbx.Size = new Size(232, 39);
             workNtxtbx.TabIndex = 7;
             // 
             // homeNtxtbx
             // 
-            homeNtxtbx.Location = new Point(719, 340);
+            homeNtxtbx.Location = new Point(1021, 340);
             homeNtxtbx.Name = "homeNtxtbx";
             homeNtxtbx.Size = new Size(232, 39);
             homeNtxtbx.TabIndex = 8;
@@ -120,7 +120,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(72, 206);
+            label1.Location = new Point(270, 209);
             label1.Name = "label1";
             label1.Size = new Size(129, 32);
             label1.TabIndex = 9;
@@ -129,7 +129,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(322, 206);
+            label2.Location = new Point(635, 209);
             label2.Name = "label2";
             label2.Size = new Size(126, 32);
             label2.TabIndex = 10;
@@ -139,7 +139,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(579, 203);
+            label3.Location = new Point(956, 209);
             label3.Name = "label3";
             label3.Size = new Size(399, 32);
             label3.TabIndex = 11;
@@ -148,7 +148,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(146, 305);
+            label4.Location = new Point(235, 305);
             label4.Name = "label4";
             label4.Size = new Size(184, 32);
             label4.TabIndex = 12;
@@ -157,7 +157,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(459, 305);
+            label5.Location = new Point(597, 305);
             label5.Name = "label5";
             label5.Size = new Size(164, 32);
             label5.TabIndex = 13;
@@ -166,7 +166,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(754, 305);
+            label6.Location = new Point(1058, 305);
             label6.Name = "label6";
             label6.Size = new Size(174, 32);
             label6.TabIndex = 14;
@@ -176,7 +176,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1039, 548);
+            ClientSize = new Size(1592, 548);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);

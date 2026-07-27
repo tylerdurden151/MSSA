@@ -12,8 +12,19 @@ namespace Assignment_4._1
 
             InitializeComponent();
             _people = new BindingList<Person>();
+            _people.Add(new Person
+            {
+                Name = "John",
+                LastName = "Doe",
+                Address = "123 Main St",
+                MobileNumber = "123-456-7890",
+                WorkNumber = "098-765-4321",
+                HomeNumber = "555-555-5555"
+            }); 
+
             _personBindingSource.DataSource = _people;
             dataGridView1.DataSource = _personBindingSource;
+
 
         }
 
@@ -22,41 +33,44 @@ namespace Assignment_4._1
             // Create a new person and add it to the phone book
             Person newPerson = new Person
             {
-                Name = "John",
-                LastName = "Doe",
-                Address = "123 Main St",
-                MobileNumber = "555-1234",
-                WorkNumber = "555-5678",
-                HomeNumber = "555-8765"
+                Name = firstNtxtbx.Text,
+                LastName = lastNtxtbx.Text,
+                Address = addtxtbx.Text,
+                MobileNumber = mobileNtxtbox.Text,
+                WorkNumber = workNtxtbx.Text,
+                HomeNumber = homeNtxtbx.Text
             };
             _phoneBook.AddPerson(newPerson);
-            UpdateDataGridView();
+            _people.Add(newPerson);
+            firstNtxtbx.Clear();
+            lastNtxtbx.Clear();
+            addtxtbx.Clear();
+            mobileNtxtbox.Clear();
+            workNtxtbx.Clear();
+            homeNtxtbx.Clear();
         }
 
         private void dltbtn_Click(object sender, EventArgs e)
         {
-            string name = txtSearchName.Text;   // or however you're capturing which person
-
-            if (string.IsNullOrWhiteSpace(name))
+            // Check if a row is selected in the DataGridView
+            if (dataGridView1.CurrentRow == null)
             {
-                MessageBox.Show("Enter a name to delete.");
                 return;
             }
 
+            if (dataGridView1.CurrentRow.DataBoundItem is not Person selected)
+            {
+                return;
+            }
+            //Pop up a confirmation dialog before deleting the selected person
             var confirm = MessageBox.Show(
-                $"Delete {name}?",
-                "Confirm Delete",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-
+            $"Delete {selected.Name} {selected.LastName}?",
+            "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            // If the user confirms, delete the person from the phone book and remove it from the BindingList
             if (confirm == DialogResult.Yes)
             {
-                bool removed = _phoneBook.DeletePerson(name);
-
-                if (removed)
-                    RefreshGrid();          // or _people.Remove(...) if using BindingList
-                else
-                    MessageBox.Show("No person found with that name.");
+                _phoneBook.DeletePerson($"{selected.Name} {selected.LastName}");
+                _people.Remove(selected);
             }
         }
 
