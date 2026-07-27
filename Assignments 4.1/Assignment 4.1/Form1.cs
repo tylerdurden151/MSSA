@@ -76,5 +76,37 @@ namespace Assignment_4._1
         {
 
         }
+
+        private void searchbtn_Click(object sender, EventArgs e)
+        {
+            string key = searchbx.Text.Trim();
+            Person result = _phoneBook.SearchPerson(key);
+
+            if (result == null)
+            {
+                MessageBox.Show("No person found with that name.");
+                return;
+            }
+
+            // show the details — reuse your existing input textboxes as a "detail view"
+            firstNtxtbx.Text = result.Name;
+            lastNtxtbx.Text = result.LastName;
+            addtxtbx.Text = result.Address;
+            mobileNtxtbox.Text = result.MobileNumber;
+            workNtxtbx.Text = result.WorkNumber;
+            homeNtxtbx.Text = result.HomeNumber;
+
+            // bonus: also highlight the matching row in the grid
+            int index = _people.IndexOf(result);
+            if (index >= 0)
+            {
+                _personBindingSource.Position = index;
+            }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

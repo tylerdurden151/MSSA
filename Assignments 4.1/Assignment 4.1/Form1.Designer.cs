@@ -43,6 +43,9 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
+            searchbtn = new Button();
+            searchbx = new TextBox();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -166,17 +169,47 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(1058, 305);
+            label6.Location = new Point(1048, 305);
             label6.Name = "label6";
             label6.Size = new Size(174, 32);
             label6.TabIndex = 14;
             label6.Text = "Home Number";
             // 
+            // searchbtn
+            // 
+            searchbtn.Location = new Point(553, 681);
+            searchbtn.Name = "searchbtn";
+            searchbtn.Size = new Size(150, 46);
+            searchbtn.TabIndex = 15;
+            searchbtn.Text = "Search";
+            searchbtn.UseVisualStyleBackColor = true;
+            searchbtn.Click += searchbtn_Click;
+            // 
+            // searchbx
+            // 
+            searchbx.Location = new Point(487, 582);
+            searchbx.Name = "searchbx";
+            searchbx.Size = new Size(313, 39);
+            searchbx.TabIndex = 16;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(462, 538);
+            label8.Name = "label8";
+            label8.Size = new Size(373, 32);
+            label8.TabIndex = 18;
+            label8.Text = "Search First Name and Last Name";
+            label8.Click += label8_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1592, 548);
+            ClientSize = new Size(1592, 785);
+            Controls.Add(label8);
+            Controls.Add(searchbx);
+            Controls.Add(searchbtn);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -216,5 +249,8 @@
         private Label label4;
         private Label label5;
         private Label label6;
+        private Button searchbtn;
+        private TextBox searchbx;
+        private Label label8;
     }
 }
