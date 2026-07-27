@@ -12,20 +12,18 @@ namespace Assignment_4._1
 
             InitializeComponent();
             _people = new BindingList<Person>();
-            _people.Add(new Person
-            {
-                Name = "John",
-                LastName = "Doe",
-                Address = "123 Main St",
-                MobileNumber = "123-456-7890",
-                WorkNumber = "098-765-4321",
-                HomeNumber = "555-555-5555"
-            }); 
-
+            LoadData();
             _personBindingSource.DataSource = _people;
             dataGridView1.DataSource = _personBindingSource;
 
 
+        }
+
+        private void LoadData()
+        {
+            // Add sample data to the list
+            _people.Add(new Person { Name = "Alice", LastName = "Smith", Address = "456 Oak Ave", MobileNumber = "111-222-3333", WorkNumber = "444-555-6666", HomeNumber = "777-888-9999" });
+            _people.Add(new Person { Name = "Bob", LastName = "Johnson", Address = "789 Pine St", MobileNumber = "222-333-4444", WorkNumber = "555-666-7777", HomeNumber = "888-999-0000" });
         }
 
         private void button1_Click(object sender, EventArgs e)
