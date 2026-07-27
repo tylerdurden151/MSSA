@@ -13,6 +13,8 @@ namespace Assignment_4._1
             _phoneBook = new Dictionary<string, Person>();
         }
 
+        // Add a person to the phone book
+        // person is the object of the Person class that contains the person's information
         public void AddPerson(Person person)
         {
             _phoneBook[person.Name] = person;
