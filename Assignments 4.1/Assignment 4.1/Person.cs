@@ -17,14 +17,11 @@ namespace Assignment_4._1
     {
         private string _name;
         private string _lastName;
-        public string Address { get; set; }
-        public string MobileNumber { get; set; }
-        public string WorkNumber { get; set; }
-        public string HomeNumber { get; set; }
         public string Name
         {
             get { return _name; }
-            set {
+            set
+            {
                 if (string.IsNullOrWhiteSpace(value))
                     throw new ArgumentException("Name cannot be empty.");
                 _name = value;
@@ -33,11 +30,17 @@ namespace Assignment_4._1
         public string LastName
         {
             get { return _lastName; }
-            set {
+            set
+            {
                 if (string.IsNullOrWhiteSpace(value))
                     throw new ArgumentException("Last name cannot be empty.");
                 _lastName = value;
             }
         }
+        public string Address { get; set; }
+        public string MobileNumber { get; set; }
+        public string WorkNumber { get; set; }
+        public string HomeNumber { get; set; }
+
     }
 }

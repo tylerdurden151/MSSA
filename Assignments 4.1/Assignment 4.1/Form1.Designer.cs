@@ -105,7 +105,7 @@
             // 
             // workNtxtbx
             // 
-            workNtxtbx.Location = new Point(553, 340);
+            workNtxtbx.Location = new Point(603, 340);
             workNtxtbx.Name = "workNtxtbx";
             workNtxtbx.Size = new Size(232, 39);
             workNtxtbx.TabIndex = 7;
@@ -157,7 +157,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(597, 305);
+            label5.Location = new Point(649, 305);
             label5.Name = "label5";
             label5.Size = new Size(164, 32);
             label5.TabIndex = 13;
