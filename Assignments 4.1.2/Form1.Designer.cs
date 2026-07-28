@@ -125,6 +125,7 @@
             resultbx.Font = new Font("Segoe UI", 20F);
             resultbx.Location = new Point(329, 501);
             resultbx.Name = "resultbx";
+            resultbx.ReadOnly = true;
             resultbx.Size = new Size(392, 78);
             resultbx.TabIndex = 7;
             // 
