@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             addbtrn = new Button();
             Subtract = new Button();
             multibtn = new Button();
             divbtn = new Button();
             clrbtn = new Button();
             firstNbx = new TextBox();
+            form1BindingSource = new BindingSource(components);
             secondNbx = new TextBox();
-            textBox1 = new TextBox();
+            resultbx = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            ((System.ComponentModel.ISupportInitialize)form1BindingSource).BeginInit();
             SuspendLayout();
             // 
             // addbtrn
@@ -50,6 +53,7 @@
             addbtrn.TabIndex = 0;
             addbtrn.Text = "ADD";
             addbtrn.UseVisualStyleBackColor = true;
+            addbtrn.Click += addbtrn_Click;
             // 
             // Subtract
             // 
@@ -60,6 +64,7 @@
             Subtract.TabIndex = 1;
             Subtract.Text = "SUBTRACT";
             Subtract.UseVisualStyleBackColor = true;
+            Subtract.Click += Subtract_Click;
             // 
             // multibtn
             // 
@@ -70,6 +75,7 @@
             multibtn.TabIndex = 2;
             multibtn.Text = "MULTIPLY";
             multibtn.UseVisualStyleBackColor = true;
+            multibtn.Click += multibtn_Click;
             // 
             // divbtn
             // 
@@ -80,6 +86,7 @@
             divbtn.TabIndex = 3;
             divbtn.Text = "DIVIDE";
             divbtn.UseVisualStyleBackColor = true;
+            divbtn.Click += divbtn_Click;
             // 
             // clrbtn
             // 
@@ -90,14 +97,20 @@
             clrbtn.TabIndex = 4;
             clrbtn.Text = "CLEAR";
             clrbtn.UseVisualStyleBackColor = true;
+            clrbtn.Click += clrbtn_Click;
             // 
             // firstNbx
             // 
+            firstNbx.DataBindings.Add(new Binding("Text", form1BindingSource, "", true));
             firstNbx.Font = new Font("Segoe UI", 20F);
             firstNbx.Location = new Point(329, 151);
             firstNbx.Name = "firstNbx";
             firstNbx.Size = new Size(399, 78);
             firstNbx.TabIndex = 5;
+            // 
+            // form1BindingSource
+            // 
+            form1BindingSource.DataSource = typeof(Form1);
             // 
             // secondNbx
             // 
@@ -107,13 +120,13 @@
             secondNbx.Size = new Size(399, 78);
             secondNbx.TabIndex = 6;
             // 
-            // textBox1
+            // resultbx
             // 
-            textBox1.Font = new Font("Segoe UI", 20F);
-            textBox1.Location = new Point(329, 501);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(392, 78);
-            textBox1.TabIndex = 7;
+            resultbx.Font = new Font("Segoe UI", 20F);
+            resultbx.Location = new Point(329, 501);
+            resultbx.Name = "resultbx";
+            resultbx.Size = new Size(392, 78);
+            resultbx.TabIndex = 7;
             // 
             // label1
             // 
@@ -153,7 +166,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(resultbx);
             Controls.Add(secondNbx);
             Controls.Add(firstNbx);
             Controls.Add(clrbtn);
@@ -163,6 +176,7 @@
             Controls.Add(addbtrn);
             Name = "Form1";
             Text = "Calculator App";
+            ((System.ComponentModel.ISupportInitialize)form1BindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -176,9 +190,10 @@
         private Button clrbtn;
         private TextBox firstNbx;
         private TextBox secondNbx;
-        private TextBox textBox1;
+        private TextBox resultbx;
         private Label label1;
         private Label label2;
         private Label label3;
+        private BindingSource form1BindingSource;
     }
 }
