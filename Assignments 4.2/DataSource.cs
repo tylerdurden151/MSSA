@@ -16,7 +16,7 @@ namespace Assignments_4._2
             {
                 new Teacher("vallee", Subject.Math)   { Password = "password99" },
                 new Teacher("waited", Subject.English){ Password = "password99" },
-                new Teacher("newmanb", Subject.Science) { Password = "password99" }
+                new Teacher("newmanb", Subject.Science){ Password = "password99" }
             };
 
             Students = new BindingList<Student>

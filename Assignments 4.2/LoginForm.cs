@@ -30,7 +30,7 @@ namespace Assignments_4._2
             if (matched != null && matched.VerifyPassword(txtPasswordbx.Text))
             {
                 Session.StartSession(matched);
-                this.DialogResult = DialogResult.OK;   // this line alone closes the popup
+                this.DialogResult = DialogResult.OK;   
             }
             else
             {

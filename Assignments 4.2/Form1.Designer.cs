@@ -103,6 +103,7 @@
             addbtn.TabIndex = 7;
             addbtn.Text = "Add";
             addbtn.UseVisualStyleBackColor = true;
+            addbtn.Click += addbtn_Click;
             // 
             // deletebtn
             // 
@@ -113,6 +114,7 @@
             deletebtn.TabIndex = 8;
             deletebtn.Text = "Delete";
             deletebtn.UseVisualStyleBackColor = true;
+            deletebtn.Click += deletebtn_Click;
             // 
             // label1
             // 
@@ -157,7 +159,7 @@
             // topStudentGPAbtn
             // 
             topStudentGPAbtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            topStudentGPAbtn.Location = new Point(1199, 512);
+            topStudentGPAbtn.Location = new Point(1181, 511);
             topStudentGPAbtn.Name = "topStudentGPAbtn";
             topStudentGPAbtn.Size = new Size(287, 46);
             topStudentGPAbtn.TabIndex = 13;
@@ -184,6 +186,7 @@
             Controls.Add(signinbtn);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
