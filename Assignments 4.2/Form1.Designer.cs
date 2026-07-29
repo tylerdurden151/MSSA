@@ -28,12 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            signinbtn = new Button();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // signinbtn
+            // 
+            signinbtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            signinbtn.Location = new Point(1552, 28);
+            signinbtn.Name = "signinbtn";
+            signinbtn.Size = new Size(302, 54);
+            signinbtn.TabIndex = 0;
+            signinbtn.Text = "Sign In";
+            signinbtn.UseVisualStyleBackColor = true;
+            signinbtn.Click += signinbtn_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(87, 27);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 82;
+            dataGridView1.Size = new Size(1423, 334);
+            dataGridView1.TabIndex = 1;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1969, 839);
+            Controls.Add(dataGridView1);
+            Controls.Add(signinbtn);
+            Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button signinbtn;
+        private DataGridView dataGridView1;
     }
 }

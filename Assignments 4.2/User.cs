@@ -6,7 +6,7 @@ namespace Assignments_4._2
 {
     internal abstract class User
     {
-        public string UserName { get; set; }
+        public string UserName { get; set; } = "";
         protected string _password = Guid.NewGuid().ToString(); // Generate a random password by default
         public string Password { 
             set {

@@ -5,22 +5,19 @@ using System.Text;
 
 namespace Assignments_4._2
 {
-    internal class DataSource
+    internal static class DataSource
     {
-       public static List<Teacher> Teachers { get; private set; }
+        public static List<Teacher> Teachers { get; private set; }
         public static BindingList<Student> Students { get; private set; }
 
         public static void CreateData()
         {
             Teachers = new List<Teacher>
             {
-                new Teacher("vallee", Subject.Math),
-                new Teacher("waited", Subject.English),
-                new Teacher("newmanb", Subject.Science)
+                new Teacher("vallee", Subject.Math)   { Password = "password99" },
+                new Teacher("waited", Subject.English){ Password = "password99" },
+                new Teacher("newmanb", Subject.Science) { Password = "password99" }
             };
-            Teachers[0].Password = "password99";
-            Teachers[1].Password = "password99";
-            Teachers[2].Password = "password99";
 
             Students = new BindingList<Student>
             {
@@ -29,4 +26,5 @@ namespace Assignments_4._2
                 new Student(3, "George Li", Subject.Science, 3.95)
             };
         }
+    }
 }

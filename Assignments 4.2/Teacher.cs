@@ -6,12 +6,12 @@ namespace Assignments_4._2
 {
     internal class Teacher : User
     {
-        public Subject Subject { get; set; }
+        public Subject TeacherSubject { get; set; }
 
         public Teacher(string userName, Subject subject)
         {
             UserName = userName;
-            Subject = subject;
+            TeacherSubject = subject;
         }
         public override bool SetPassword(string password)
         {
