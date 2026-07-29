@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Diagnostics;
 
 namespace Assignments_4._2
 {
@@ -68,6 +69,12 @@ namespace Assignments_4._2
                 MessageBox.Show("Enter a valid grade.");
                 return;
             }
+            if (grade < 0 || grade > 4)
+            {
+                MessageBox.Show("Enter a valid grade between 0 and 4.");
+                return;
+            }
+
             //add the student to the data source
             Student newStudent = new Student((int)id, txtStudentNamebx.Text, (Subject)cboStudentSubject.SelectedItem, grade);
 
@@ -86,7 +93,7 @@ namespace Assignments_4._2
 
         private void deletebtn_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.CurrentRow == null)
+            if (dataGridView1.CurrentRow == null)
             {
                 return;
             }
@@ -98,6 +105,59 @@ namespace Assignments_4._2
 
             DataSource.Students.Remove(selected);
             _currentStudents.Remove(selected);
+        }
+
+        private void topStudentGPAbtn_Click(object sender, EventArgs e)
+        {
+            if (_currentStudents == null || _currentStudents.Count == 0)
+            {
+                MessageBox.Show("No students available to evaluate.");
+                return;
+            }
+            Student highest = _currentStudents[0];
+            foreach (Student student in _currentStudents) {
+                if (student.GPA > highest.GPA)
+                {
+                    highest = student;
+                }
+            }
+            try
+            {
+                using (StreamWriter steam = new StreamWriter("top_students.txt"))
+                {
+                    steam.WriteLine("Top Student:");
+                    steam.WriteLine($"ID: {highest.StudentId}");
+                    steam.WriteLine($"Name: {highest.StudentName}");
+                    steam.WriteLine($"Subject: {highest.StudentSubject}");
+                    steam.WriteLine($"GPA: {highest.GPA}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(ex.Message);
+            }
+            try
+            {
+                // Read the details from the same file and print on console.
+                using (StreamReader sr = new StreamReader("top_students.txt"))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Let the user know what went wrong.
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(ex.Message);
+            }
+
+            MessageBox.Show("Saved highest GPA student to HighestGPA.txt");
+           
         }
     }
 }

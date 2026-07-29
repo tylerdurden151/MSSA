@@ -165,6 +165,7 @@
             topStudentGPAbtn.TabIndex = 13;
             topStudentGPAbtn.Text = "Print Top Students";
             topStudentGPAbtn.UseVisualStyleBackColor = true;
+            topStudentGPAbtn.Click += topStudentGPAbtn_Click;
             // 
             // Form1
             // 
