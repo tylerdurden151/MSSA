@@ -5,6 +5,7 @@ namespace Assignments_4._2
         public Form1()
         {
             InitializeComponent();
+            dataGridView1.Enabled = false;
         }
 
         private void signinbtn_Click(object sender, EventArgs e)
