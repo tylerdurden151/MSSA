@@ -62,5 +62,5 @@ Preliminary solution structure:
   -> Save Student with highest GPA to txt file
   -> Add / Edit Grades
 ```
-**External resources required (e.g. database, Azure):** None
+**External resources required (e.g. database, Azure):** None <br>
 **Planned development time in hours:** 4 hours
