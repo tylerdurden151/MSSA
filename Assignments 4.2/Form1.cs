@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.IO;
 using System.Diagnostics;
 
 namespace Assignments_4._2
@@ -75,11 +76,13 @@ namespace Assignments_4._2
                 return;
             }
 
-            //add the student to the data source
+            //create object of student and add to the list
             Student newStudent = new Student((int)id, txtStudentNamebx.Text, (Subject)cboStudentSubject.SelectedItem, grade);
 
+            // Add the new student to the data source and the current students list
             DataSource.Students.Add(newStudent);
             _currentStudents.Add(newStudent);
+
             //clear the text boxes
             txtStudentidbx.Clear();
             txtStudentNamebx.Clear();
@@ -131,30 +134,13 @@ namespace Assignments_4._2
                     steam.WriteLine($"Subject: {highest.StudentSubject}");
                     steam.WriteLine($"GPA: {highest.GPA}");
                 }
+                Process.Start(new ProcessStartInfo("top_students.txt") { UseShellExecute = true });
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(ex.Message);
-            }
-            try
-            {
-                // Read the details from the same file and print on console.
-                using (StreamReader sr = new StreamReader("top_students.txt"))
-                {
-                    string line;
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        Console.WriteLine(line);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // Let the user know what went wrong.
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(ex.Message);
-            }
+                MessageBox.Show("The file could not be read:" + ex.Message);
+             }
+      
 
             MessageBox.Show("Saved highest GPA student to HighestGPA.txt");
            
