@@ -6,9 +6,9 @@ namespace Assignments_4._2
 {
     internal class Teacher : User
     {
-        public string Subject { get; set; }
+        public Subject Subject { get; set; }
 
-        public Teacher(string userName, string subject)
+        public Teacher(string userName, Subject subject)
         {
             UserName = userName;
             Subject = subject;
