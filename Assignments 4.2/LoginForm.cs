@@ -17,6 +17,7 @@ namespace Assignments_4._2
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
+            // Find the teacher with the matching username
             Teacher matched = null;
             foreach (Teacher t in DataSource.Teachers)
             {
@@ -27,6 +28,7 @@ namespace Assignments_4._2
                 }
             }
 
+            // Check if a matching teacher was found and verify the password
             if (matched != null && matched.VerifyPassword(txtPasswordbx.Text))
             {
                 Session.StartSession(matched);
