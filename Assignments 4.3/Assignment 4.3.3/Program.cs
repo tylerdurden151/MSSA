@@ -26,10 +26,10 @@ public class Solution
             Console.Write($"element - {i} : ");
             arr[i] = Convert.ToInt32(Console.ReadLine());
         }
-        UniqueElements(arr);
+        CountElements(arr);
     }
-
-    public static void UniqueElements(int[] arr)
+    // This method counts the occurrences of each element in the array and stores them in a dictionary
+    public static void CountElements(int[] arr)
     {
         // Count occurrences of each element
         Dictionary<int, int> elementCount = new Dictionary<int, int>();
@@ -38,7 +38,7 @@ public class Solution
             //if the item is already in the dictionary, increment its count; otherwise, add it with a count of 1
             if (elementCount.ContainsKey(item))
             {
-                
+
                 elementCount[item]++;
             }
             else
@@ -47,7 +47,12 @@ public class Solution
                 elementCount[item] = 1;
             }
         }
+        UniqueElements(elementCount);
+    }
 
+    // This method identifies unique elements from the dictionary of element counts
+    public static void UniqueElements(Dictionary<int, int> elementCount)
+    {
         // Get elements that appear only once
         //Store unique elements in a HashSet to avoid duplicates
         HashSet<int> uniqueElements = new HashSet<int>();
@@ -65,6 +70,7 @@ public class Solution
 
     }
 
+    // This method prints the unique elements found in the array
     public static void PrintUniqueElements(HashSet<int> uniqueElements)
     {
         Console.WriteLine("The unique elements found in the array are :");
