@@ -35,22 +35,28 @@ public class Solution
         Dictionary<int, int> elementCount = new Dictionary<int, int>();
         foreach (var item in arr)
         {
+            //if the item is already in the dictionary, increment its count; otherwise, add it with a count of 1
             if (elementCount.ContainsKey(item))
             {
+                
                 elementCount[item]++;
             }
             else
             {
+                // If the item is not in the dictionary, add it with a count of 1
                 elementCount[item] = 1;
             }
         }
 
         // Get elements that appear only once
+        //Store unique elements in a HashSet to avoid duplicates
         HashSet<int> uniqueElements = new HashSet<int>();
         foreach (var kvp in elementCount)
         {
+            //Check if the count of the element is 1, indicating it is unique
             if (kvp.Value == 1)
             {
+                //Add the unique element to the HashSet
                 uniqueElements.Add(kvp.Key);
             }
         }
