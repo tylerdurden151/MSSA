@@ -24,7 +24,7 @@ Console.WriteLine("Assignment 4.3.1 - Electricity Bill Calculation");
 ElectricityBill e = new ElectricityBill();
 e.Run();
 
-class ElectricityBill
+public class ElectricityBill
 {
     const decimal rate1 = 1.20m;
     const decimal rate2 = 1.50m;
@@ -51,7 +51,7 @@ class ElectricityBill
             {
                 throw new ArgumentException("Customer name cannot exceed 100 characters.");
             }
-            _customerName = value.Trim();   // optional: normalize stray whitespace
+            _customerName = value.Trim();  
         }
     }
     public int CustomerId
@@ -98,6 +98,24 @@ class ElectricityBill
 
     public void CalculateBill()
     {
+        switch (UnitsConsumed)
+        {
+            case < 0:
+                throw new ArgumentException("Units consumed cannot be negative.");
+            case <= 199:
+                AmountCharges = UnitsConsumed * rate1;
+                break;
+            case <= 399:
+                AmountCharges = (UnitsConsumed - 199) * rate2 + maxTier1;
+                break;
+            case <= 599:
+                AmountCharges = (UnitsConsumed - 399) * rate3 + maxTier1 + maxTier2;
+                break;
+            default:
+                AmountCharges = (UnitsConsumed - 599) * rate4 + maxTier1 + maxTier2 + maxTier3;
+                break;
+        }
+        /*
         if (UnitsConsumed <= 199)
         {
             AmountCharges = UnitsConsumed * rate1;
@@ -114,7 +132,7 @@ class ElectricityBill
         {
             AmountCharges = (UnitsConsumed - 599) * rate4 + maxTier1 + maxTier2 + maxTier3;
         }
-
+        */
 
         if (AmountCharges > 400)
         {
