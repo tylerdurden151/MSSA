@@ -34,7 +34,7 @@ public class Solution
     public static void CountFrequency(int[] arr)
     {
         Console.WriteLine("Frequency of all elements of array:");
-        var frequencyDict = new Dictionary<int, int>();
+        Dictionary<int, int> frequencyDict = new Dictionary<int, int>();
         foreach (var item in arr)
         {
             if (frequencyDict.ContainsKey(item))
