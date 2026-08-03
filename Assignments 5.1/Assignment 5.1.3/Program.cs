@@ -17,21 +17,13 @@ public class Solution
 {
     public bool isTwice(int[] num)
     {
-        Dictionary<int, int> countMap = new Dictionary<int, int>();
+        HashSet<int> seen = new HashSet<int>();
         foreach( int i in num ) {
-            if( countMap.ContainsKey( i ) ) {
-                countMap[ i ]++;
-            } else {
-                countMap[ i ] = 1;
-            }
-        }
-
-        foreach( var kvp in countMap ) {
-            if( kvp.Value == 2 ) {
+            // If the number is already in the set, it means it has appeared twice
+            if (!seen.Add( i ) ) {
                 return true;
             }
         }
-
         return false;   
     }
 
