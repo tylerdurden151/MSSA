@@ -1,4 +1,13 @@
-﻿Solution s = new Solution();
+﻿/*3. Write a program in C# Sharp to print numbers from 
+ * n to 1 using recursion.
+Test Data :
+How many numbers to print : 10
+Expected Output :
+10 9 8 7 6 5 4 3 2 1
+ 
+ */
+
+Solution s = new Solution();
 s.Num(10); // Output: 10 9 8 7 6 5 4 3 2 1
 
 public class Solution
@@ -11,7 +20,7 @@ public class Solution
             return;
         }
         Console.Write(num + " ");
-        Num(num - 1);
+        Num(num - 1);g
 
     }
 }
