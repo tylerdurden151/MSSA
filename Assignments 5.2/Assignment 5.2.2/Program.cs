@@ -11,15 +11,16 @@ s.Num(10);
 public class Solution
 {
     public void Num(int num)
-    {
-        
+    {  
         if (num <= 0)
         {
             return;
         }
         Num(num - 1);
-        Console.Write(num + " ");
-        
+        //this is unreachable until the recursion unwinds,
+        //so it will print in ascending order
+        Console.Write(num + " "); 
+
     }    
 }
 
