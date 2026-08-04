@@ -13,6 +13,8 @@ Input: s = "   fly me   to   the moon  "
 Output: 4
 Explanation: The last word is "moon" with length 4.
  */
+using System.Security.Cryptography;
+
 Solution s = new Solution();
 Console.WriteLine(s.Word("Hello World")); // Output: 5")
 Console.WriteLine(s.Word("   fly me   to   the moon  ")); // Output: 4")
@@ -25,14 +27,12 @@ Console.WriteLine(s2.LengthOfLastWord("luffy is still joyboy")); // Output: 6")
 
 public class Solution
 {
+    //Not Allowed
     public int Word(string s)
     {
-
         string[] words = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
         string lastWord = words[words.Length - 1];
         return lastWord.Length;
-
-
     }
 }
 
