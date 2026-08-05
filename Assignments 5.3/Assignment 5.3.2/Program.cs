@@ -21,10 +21,16 @@ Explanation: There are three ways to climb to the top.
 3. 2 steps + 1 step
  */
 Solution s = new Solution();
+Solution2 s2 = new Solution2();
 Console.WriteLine(s.S(2));
 Console.WriteLine(s.S(3));
 Console.WriteLine(s.S(4));
+Console.WriteLine(s.S(5));
 
+Console.WriteLine(s2.ClimbStairs(2));
+Console.WriteLine(s2.ClimbStairs(3)); 
+Console.WriteLine(s2.ClimbStairs(4));
+Console.WriteLine(s2.ClimbStairs(5));
 
 
 public class Solution
@@ -49,5 +55,17 @@ public class Solution
 
         return fib2;
 
+    }
+}
+
+public class Solution2
+{
+    public int ClimbStairs(int n)
+    {
+        if (n <= 2)
+        {
+            return n;
+        }
+        return ClimbStairs(n - 1) + ClimbStairs(n - 2);
     }
 }
