@@ -17,8 +17,9 @@ public class Solution
         {
             return ;
         }
-
+        //Recursively call remove the last digit from the number
         Digits(num / 10);
+        //Display the last digit of the number
         Console.Write((num % 10) + " ");
 
 
