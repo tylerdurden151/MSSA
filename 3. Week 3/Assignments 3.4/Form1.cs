@@ -33,6 +33,7 @@ namespace Assignments_3._4
                 Type = CoffeeType.Espresso
             });
 
+            //Data GridView settings
             dataGridView1.DataSource = coffees;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ReadOnly = true;

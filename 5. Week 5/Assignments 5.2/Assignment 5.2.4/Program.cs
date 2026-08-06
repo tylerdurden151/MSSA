@@ -14,6 +14,10 @@ Console.WriteLine(s.IsPalindromeNoRecursion("RADAR")); // Output: True
 
 public class Solution
 {
+    //Two pointer approach,
+    //left and right, if they are equal,
+    //move the pointers towards the center
+
     public bool IsPalindrome(string s, int left = 0, int right = -1)
     {
         if (right == -1) {

@@ -18,7 +18,7 @@ bool result2 = year2.IfYearIsLeap(2018);
 Console.WriteLine(result2);
 
 
-class LeapYear {
+public class LeapYear {
 
     private int _year;
     public int Year { get { return _year; } set { _year = value; } }

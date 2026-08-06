@@ -115,24 +115,6 @@ public class ElectricityBill
                 AmountCharges = (UnitsConsumed - 599) * rate4 + maxTier1 + maxTier2 + maxTier3;
                 break;
         }
-        /*
-        if (UnitsConsumed <= 199)
-        {
-            AmountCharges = UnitsConsumed * rate1;
-        }
-        else if (UnitsConsumed <= 399)
-        {
-            AmountCharges = (UnitsConsumed - 199) * rate2 + maxTier1;
-        }
-        else if (UnitsConsumed <= 599)
-        {
-            AmountCharges = (UnitsConsumed - 399) * rate3 + maxTier1 + maxTier2;
-        }
-        else
-        {
-            AmountCharges = (UnitsConsumed - 599) * rate4 + maxTier1 + maxTier2 + maxTier3;
-        }
-        */
 
         if (AmountCharges > 400)
         {

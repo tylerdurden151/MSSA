@@ -1,5 +1,6 @@
 ﻿/*
- * 2. Write a program in C# Sharp to print the first n natural number using recursion.
+ * 2. Write a program in C# Sharp to print the first n natural number 
+ * using recursion.
 Test Data :
 How many numbers to print : 10
 Expected Output :

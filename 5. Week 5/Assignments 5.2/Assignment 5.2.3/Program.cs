@@ -20,7 +20,7 @@ public class Solution
             return;
         }
         Console.Write(num + " ");
-        Num(num - 1);g
+        Num(num - 1);
 
     }
 }

@@ -27,6 +27,7 @@ public class TwoDArray
     public void DisplayTwoD()
     {
         //Get the length of the array and storing the width of the digits.
+        // Width will store the Highest digits
         int width = 0;
         foreach (int n in Number)
         {
@@ -45,6 +46,7 @@ public class TwoDArray
             {
                 Console.Write("|");
             }
+            //Now use the Highest digit width and apply it to the string
             Console.Write($" {n.ToString().PadLeft(width)} |");
             count++;
             //Break line up to 3 values
