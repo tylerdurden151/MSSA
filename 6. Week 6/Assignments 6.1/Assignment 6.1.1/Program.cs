@@ -1,4 +1,7 @@
-﻿/**/
+﻿/*1. Implement a single linked list with each node representing a house. You may add data in it like house number, brief address, type of house ( like Ranch, Colonial). 
+ *
+ * Each house (node) will be linked to next.
+ * Give facility to the user to search a house by its number and then display the details. ( Windows / Console)*/
 
 LinkedListNode homes = new LinkedListNode(new Home { HomeId = 1, Address = "123 Main St"});
 homes.AddNode(new LinkedListNode(new Home { HomeId = 2, Address = "456 Oak Ave"}));
@@ -14,11 +17,6 @@ public class LinkedListNode
 {
     public Home Value { get; set; }
     public LinkedListNode? Next { get; set; }
-
-    public LinkedListNode()
-    {
-        Value = new Home();
-    }
 
     public LinkedListNode(Home value)
     {
