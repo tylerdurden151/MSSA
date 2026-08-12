@@ -4,17 +4,29 @@ Stack stack = new Stack(10);
 stack.Push(10);
 stack.Push(20);
 stack.Push(30);
+Console.WriteLine();
 stack.Display();
+Console.WriteLine();
+
 stack.Pop();    
 stack.Pop();
+Console.WriteLine();
+stack.Display();
+Console.WriteLine();
+
 stack.Push(40);
+
+Console.WriteLine();
 stack.Display();
-stack.Peak();
+Console.WriteLine();
+
+Console.WriteLine("Current stack:");
 stack.Display();
+Console.WriteLine();
 
-
-
-
+Console.WriteLine("Peek at the top of the stack:");
+Console.WriteLine(stack.Peak());
+stack.Display();
 
 
 public class Stack
@@ -43,8 +55,9 @@ public class Stack
         if (top < 0)
         {
             Console.WriteLine("Stack Underflow");
-            return -1; // Return -1 to indicate stack is empty
+            return -1; 
         }
+        Console.WriteLine($"Popped {stackArray[top]} from stack."); 
         return stackArray[top--];
     }
 
@@ -53,7 +66,7 @@ public class Stack
         if (top < 0)
         {
             Console.WriteLine("Stack is empty.");
-            return -1; // Return -1 to indicate stack is empty
+            return -1; 
         }
         return stackArray[top];
     }
