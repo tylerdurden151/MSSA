@@ -4,7 +4,7 @@ using System.Globalization;
 
 Solution s = new Solution();
 
-int[] result1 = s.TwoSum(new int[] { -4, -1, 0, 3, 10 });
+int[] arr = new int[] { 15, 11, 7, 2 };
 int target = 9;
 foreach (int i in s.TwoSum(arr, target))
 {
@@ -18,10 +18,10 @@ class Solution
         Dictionary<int, int> map = new Dictionary<int, int>();
         for (int i = 0; i < nums.Length; i++)
         {
-            int missing = target - nums[i];
-            if (map.ContainsKey(missing))
+            int missingValue = target - nums[i];
+            if (map.ContainsKey(missingValue))
             {
-                return new int[] { map[missing], i };
+                return new int[] { map[missingValue], i };
             }
             else
             {
@@ -30,5 +30,5 @@ class Solution
             }
         }
         return new int[] { };
-}
+    }
 }
