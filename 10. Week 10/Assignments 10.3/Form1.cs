@@ -5,7 +5,7 @@ namespace Assignment_10._3
 {
     public partial class MainForm : Form
     {
-        private ProductsContext? dbContext;
+        private CarsContext? dbContext;
         public MainForm()
         {
             InitializeComponent();
@@ -14,45 +14,33 @@ namespace Assignment_10._3
         {
             base.OnLoad(e);
 
-            this.dbContext = new ProductsContext();
-
-            // Uncomment the line below to start fresh with a new database.
-            this.dbContext.Database.EnsureDeleted();
+            this.dbContext = new CarsContext();
             this.dbContext.Database.EnsureCreated();
+            this.dbContext.Cars.Load();
 
-            this.dbContext.Categories.Load();
-
-            this.categoryBindingSource.DataSource = dbContext.Categories.Local.ToBindingList();
+            this.dataGridViewCars.DataSource = this.dbContext.Cars.Local.ToBindingList();
         }
 
         protected override void OnClosing(CancelEventArgs e)
         {
             base.OnFormClosing((FormClosingEventArgs)e);
-
             this.dbContext?.Dispose();
             this.dbContext = null;
         }
 
-        private void dataGridViewCategories_SelectionChanged(object sender, EventArgs e)
+        private void dataGridViewCars_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
-            if (this.dbContext != null && this.dataGridViewCategories.CurrentRow != null)
+            if (e.Row.DataBoundItem is Car car)
             {
-                var category = this.dataGridViewCategories.CurrentRow.DataBoundItem as Category;
-
-                if (category != null)
-                {
-                    this.dbContext.Entry(category).Collection(c => c.Products).Load();
-                    this.productBindingSource.DataSource = category.Products;
-                }
+                this.dbContext?.Cars.Remove(car);
             }
         }
+
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
             this.dbContext!.SaveChanges();
-
-            this.dataGridViewCategories.Refresh();
-            this.dataGridViewProducts.Refresh();
+            this.dataGridViewCars.Refresh();
         }
     }
 }

@@ -28,106 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            dataGridViewCategories = new DataGridView();
-            categoryIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            categoryBindingSource = new BindingSource(components);
-            dataGridViewProducts = new DataGridView();
-            productIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nameDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            categoryIdDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            categoryDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            productBindingSource = new BindingSource(components);
             buttonSave = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewCategories).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)categoryBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewProducts).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)productBindingSource).BeginInit();
+            dataGridViewCars = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCars).BeginInit();
             SuspendLayout();
-            // 
-            // dataGridViewCategories
-            // 
-            dataGridViewCategories.AutoGenerateColumns = false;
-            dataGridViewCategories.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCategories.Columns.AddRange(new DataGridViewColumn[] { categoryIdDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn });
-            dataGridViewCategories.DataSource = categoryBindingSource;
-            dataGridViewCategories.Location = new Point(80, 73);
-            dataGridViewCategories.Name = "dataGridViewCategories";
-            dataGridViewCategories.RowHeadersWidth = 82;
-            dataGridViewCategories.Size = new Size(480, 300);
-            dataGridViewCategories.TabIndex = 0;
-            dataGridViewCategories.SelectionChanged += dataGridViewCategories_SelectionChanged;
-            // 
-            // categoryIdDataGridViewTextBoxColumn
-            // 
-            categoryIdDataGridViewTextBoxColumn.DataPropertyName = "CategoryId";
-            categoryIdDataGridViewTextBoxColumn.HeaderText = "CategoryId";
-            categoryIdDataGridViewTextBoxColumn.MinimumWidth = 10;
-            categoryIdDataGridViewTextBoxColumn.Name = "categoryIdDataGridViewTextBoxColumn";
-            categoryIdDataGridViewTextBoxColumn.ReadOnly = true;
-            categoryIdDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            nameDataGridViewTextBoxColumn.MinimumWidth = 10;
-            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            nameDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // categoryBindingSource
-            // 
-            categoryBindingSource.DataSource = typeof(Category);
-            // 
-            // dataGridViewProducts
-            // 
-            dataGridViewProducts.AutoGenerateColumns = false;
-            dataGridViewProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProducts.Columns.AddRange(new DataGridViewColumn[] { productIdDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn1, categoryIdDataGridViewTextBoxColumn1, categoryDataGridViewTextBoxColumn });
-            dataGridViewProducts.DataSource = productBindingSource;
-            dataGridViewProducts.Location = new Point(591, 73);
-            dataGridViewProducts.Name = "dataGridViewProducts";
-            dataGridViewProducts.RowHeadersWidth = 82;
-            dataGridViewProducts.Size = new Size(480, 300);
-            dataGridViewProducts.TabIndex = 1;
-            // 
-            // productIdDataGridViewTextBoxColumn
-            // 
-            productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
-            productIdDataGridViewTextBoxColumn.HeaderText = "ProductId";
-            productIdDataGridViewTextBoxColumn.MinimumWidth = 10;
-            productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
-            productIdDataGridViewTextBoxColumn.ReadOnly = true;
-            productIdDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            nameDataGridViewTextBoxColumn1.MinimumWidth = 10;
-            nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            nameDataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // categoryIdDataGridViewTextBoxColumn1
-            // 
-            categoryIdDataGridViewTextBoxColumn1.DataPropertyName = "CategoryId";
-            categoryIdDataGridViewTextBoxColumn1.HeaderText = "CategoryId";
-            categoryIdDataGridViewTextBoxColumn1.MinimumWidth = 10;
-            categoryIdDataGridViewTextBoxColumn1.Name = "categoryIdDataGridViewTextBoxColumn1";
-            categoryIdDataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
-            categoryDataGridViewTextBoxColumn.HeaderText = "Category";
-            categoryDataGridViewTextBoxColumn.MinimumWidth = 10;
-            categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            categoryDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // productBindingSource
-            // 
-            productBindingSource.DataSource = typeof(Product);
             // 
             // buttonSave
             // 
@@ -139,35 +43,32 @@
             buttonSave.UseVisualStyleBackColor = true;
             buttonSave.Click += buttonSave_Click;
             // 
-            // MainForm
+            // dataGridViewCars
             // 
+            dataGridViewCars.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCars.Location = new Point(60, 46);
+            dataGridViewCars.Name = "dataGridViewCars";
+            dataGridViewCars.RowHeadersWidth = 82;
+            dataGridViewCars.Size = new Size(935, 300);
+            dataGridViewCars.TabIndex = 3;
+            dataGridViewCars.UserDeletingRow += dataGridViewCars_UserDeletingRow;
+            //
+            // MainForm
+            //
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1101, 475);
+            Controls.Add(dataGridViewCars);
             Controls.Add(buttonSave);
-            Controls.Add(dataGridViewProducts);
-            Controls.Add(dataGridViewCategories);
             Name = "MainForm";
-            Text = "Products and Categories";
-            ((System.ComponentModel.ISupportInitialize)dataGridViewCategories).EndInit();
-            ((System.ComponentModel.ISupportInitialize)categoryBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewProducts).EndInit();
-            ((System.ComponentModel.ISupportInitialize)productBindingSource).EndInit();
+            Text = "Cars";
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCars).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridViewCategories;
-        private DataGridView dataGridViewProducts;
         private Button buttonSave;
-        private DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private BindingSource categoryBindingSource;
-        private BindingSource productBindingSource;
-        private DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
+        private DataGridView dataGridViewCars;
     }
 }
