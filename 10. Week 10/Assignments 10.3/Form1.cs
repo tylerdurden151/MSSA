@@ -35,13 +35,14 @@ namespace Assignment_10._3
 
         private void dataGridViewCategories_SelectionChanged(object sender, EventArgs e)
         {
-            if (this.dbContext != null)
+            if (this.dbContext != null && this.dataGridViewCategories.CurrentRow != null)
             {
-                var category = (Category)this.dataGridViewCategories.CurrentRow.DataBoundItem;
+                var category = this.dataGridViewCategories.CurrentRow.DataBoundItem as Category;
 
                 if (category != null)
                 {
-                    this.dbContext.Entry(category).Collection(e => e.Products).Load();
+                    this.dbContext.Entry(category).Collection(c => c.Products).Load();
+                    this.productBindingSource.DataSource = category.Products;
                 }
             }
         }
