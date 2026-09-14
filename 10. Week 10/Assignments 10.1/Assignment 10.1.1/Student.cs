@@ -1,6 +1,6 @@
 ﻿using System;
 
-
+namespace Assignment_10._1._1;
 
 public class Student
 {

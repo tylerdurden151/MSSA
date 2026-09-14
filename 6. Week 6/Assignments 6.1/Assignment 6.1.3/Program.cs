@@ -20,29 +20,6 @@ Console.WriteLine(string.Join(",", result1));
 
 
 // Loop thru and store in new array
-public class  Solution 
-{
-    public int[] ZeroArray (int[] nums)
-    {   
-        int left = 0;
-        int right = nums.Length - 1;
-        int [] result = new int[nums.Length];
-
-        while ( left < right ) {
-            while (left < right && nums[left] != 0)
-            {
-                int temp = nums[left];
-                left++;
-            }
-            while (left < right && nums[right] != 0)
-            {
-                int temp = nums[right];
-                right--;
-            }
-        }
-        return result;
-    }
-}
 
 public class Solution2
 {

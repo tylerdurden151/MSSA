@@ -44,6 +44,8 @@ public class Solution
                 swap_diag(matrix, i, j);
             }
         }
+
+        //Swap the elements in each row to complete the rotation
         for (int row = 0; row < n; row++ ) {
             //Delcare two pointers, one at the start and one at the end of the row
             int start = 0;

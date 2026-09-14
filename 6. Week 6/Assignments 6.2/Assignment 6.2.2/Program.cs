@@ -17,7 +17,7 @@ Input: nums = [-1,1,0,-3,3]
 Output: [0,0,9,0,0]
  */
 Solution s = new Solution();
- int[] result = s.ProductofArray(new int[] { 1, 2, 3, 4 });
+ int[] result = s.ProductExceptSelf(new int[] { 1, 2, 3, 4 });
 Console.WriteLine(string.Join(", ", result));
 
 public class Solution
