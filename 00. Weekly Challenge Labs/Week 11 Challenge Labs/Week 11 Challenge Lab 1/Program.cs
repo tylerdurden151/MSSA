@@ -31,6 +31,8 @@ public class Solution
 {
     public void SortColors(int[] nums)
     {
+        // Use the Dutch National Flag algorithm to sort the colors in-place
+        // Three pointers: low, mid, and high
         int low = 0;
         int mid = 0;
         int high = nums.Length - 1;
