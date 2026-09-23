@@ -23,6 +23,8 @@ namespace Assignments_11._1
             this.dbContext.Database.EnsureCreated();
             this.dbContext.Books.Load();
             this.dataGridViewBooks.DataSource = this.dbContext.Books.Local.ToBindingList();
+            
+       
         }
 
         private void saveButton_Click(object sender, EventArgs e)

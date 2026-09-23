@@ -44,9 +44,13 @@ public class Solution
         int o = freq['o' - 'a'] / 2;
         int n = freq['n' - 'a'];
 
-        return Math.Min(
-            Math.Min(b, a),
-            Math.Min(Math.Min(l, o), n)
-        );
+        int min = b;
+
+        min = Math.Min(min, a);
+        min = Math.Min(min, l);
+        min = Math.Min(min, o);
+        min = Math.Min(min, n);
+
+        return min;
     }
 }
